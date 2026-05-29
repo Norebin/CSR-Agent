@@ -1,0 +1,219 @@
+version: '1.0'
+core_entities:
+  task: RefactoringTask
+  evidence_pack: EvidencePack
+  plan_graph: PlanGraph
+  patch_bundle: PatchBundle
+  review_feedback: ReviewFeedback
+  task_result: TaskResult
+agents:
+  planner_orchestrator:
+    type: llm_agent
+    purpose: Generate task graph, choose experts, control retry/stop decisions.
+    inputs:
+    - RefactoringTask
+    - EvidencePack
+    - EpisodeMemory
+    - LastReviewFeedback?
+    outputs:
+    - PlanGraph
+    - RoutingDecision
+    allowed_tools:
+    - repo_browser_tool
+    - retrieval_tool
+    - entity_tracker_tool
+    forbidden_tools:
+    - build_tool
+    - smell_detector_tool
+    stop_conditions:
+    - accepted_by_reviewer
+    - max_review_loops_reached
+    - unrecoverable_entity_resolution_failure
+  method_refactorer:
+    type: llm_agent
+    purpose: Perform intra-method refactorings for Long/Complex Method and Long Parameter
+      List.
+    inputs:
+    - RefactoringTask
+    - PlanGraph
+    - EvidencePack
+    - SkillCards
+    - EpisodeMemory
+    outputs:
+    - PatchProposal
+    - ChangeRationale
+    allowed_tools:
+    - repo_browser_tool
+    - ast_tool
+    - patch_tool
+    forbidden_tools:
+    - git_tool
+    smell_scope:
+    - LongMethod
+    - ComplexMethod
+    - LongParameterList
+  move_refactorer:
+    type: llm_agent
+    purpose: Plan and implement cross-class responsibility migration.
+    inputs:
+    - RefactoringTask
+    - PlanGraph
+    - EvidencePack
+    - SkillCards
+    - EpisodeMemory
+    outputs:
+    - PatchProposal
+    - MovePlan
+    allowed_tools:
+    - repo_browser_tool
+    - ast_tool
+    - entity_tracker_tool
+    - patch_tool
+    smell_scope:
+    - FeatureEnvy
+  class_harmonizer:
+    type: llm_agent
+    purpose: Do low-risk structural cleanup after core refactoring.
+    inputs:
+    - RefactoringTask
+    - IntegratedPatchState
+    - EpisodeMemory
+    outputs:
+    - PatchProposal
+    - CleanupSummary
+    allowed_tools:
+    - repo_browser_tool
+    - ast_tool
+    - patch_tool
+  reviewer_verifier:
+    type: llm_agent
+    purpose: Summarize validation outputs, assess acceptance, and emit structured
+      repair feedback.
+    inputs:
+    - RefactoringTask
+    - IntegratedPatchState
+    - ValidationBundle
+    - EpisodeMemory
+    outputs:
+    - ReviewFeedback
+    - AcceptOrRetryDecision
+    allowed_tools:
+    - repo_browser_tool
+    forbidden_tools:
+    - patch_tool
+services:
+  memory_manager:
+    responsibilities:
+    - retrieve semantic memory from RCKB
+    - persist episodic memory for the current task
+    - retrieve skill cards by smell type and failure mode
+  patch_integrator:
+    responsibilities:
+    - apply diff
+    - merge patch fragments
+    - detect conflicts
+    - produce final candidate diff
+  evaluation_runner:
+    responsibilities:
+    - batch task execution
+    - metric aggregation
+    - ablation grouping
+    - artifact persistence
+tools:
+  git_tool:
+    operations:
+    - list_tags
+    - resolve_tag
+    - checkout
+    - show_file
+    - show_diff
+  repo_browser_tool:
+    operations:
+    - read_file
+    - find_symbol
+    - search_text
+    - list_neighbors
+  ast_tool:
+    operations:
+    - parse_java
+    - get_method_node
+    - get_class_node
+    - collect_calls
+    - format_patch_context
+  entity_tracker_tool:
+    operations:
+    - anchor_entity
+    - track_across_versions
+    - score_candidates
+  retrieval_tool:
+    operations:
+    - embed_query
+    - semantic_search
+    - context_gate
+    - rerank
+    - pack_evidence
+  patch_tool:
+    operations:
+    - generate_unified_diff
+    - apply_patch
+    - revert_patch
+    - merge_patch
+  build_tool:
+    operations:
+    - detect_build_system
+    - compile_module
+    - compile_project
+  test_tool:
+    operations:
+    - select_impacted_tests
+    - run_targeted_tests
+    - run_generated_assertions
+  smell_detector_tool:
+    operations:
+    - detect_target_smell
+    - detect_new_smells
+    - cross_detector_consensus
+  metrics_tool:
+    operations:
+    - compute_srr
+    - compute_sir
+    - compute_csr
+    - compute_codebleu
+    - record_costs
+state_machine:
+- task_loaded
+- version_resolved
+- entity_located
+- evidence_retrieved
+- plan_generated
+- patch_generated
+- patch_integrated
+- static_validated
+- dynamic_validated
+- smell_rechecked
+- reviewed
+- accepted|replan|failed
+routing_rules:
+- when: smell_type in ['LongMethod','ComplexMethod','LongParameterList']
+  route:
+  - planner_orchestrator
+  - method_refactorer
+  - class_harmonizer
+  - reviewer_verifier
+- when: smell_type == 'FeatureEnvy'
+  route:
+  - planner_orchestrator
+  - move_refactorer
+  - class_harmonizer
+  - reviewer_verifier
+review_loop:
+  default_max_loops: 3
+  required_feedback_fields:
+  - failure_stage
+  - symptom
+  - location
+  - risk_level
+  - suggested_fix
+  - should_retry
+  - recommended_agent
+  - forbidden_actions_next_round

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RefactoringTask",
+  "type": "object",
+  "required": [
+    "task_id",
+    "project",
+    "smell_type",
+    "file_path",
+    "context",
+    "version"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "dataset_split": {
+      "type": "string",
+      "enum": [
+        "train",
+        "test"
+      ]
+    },
+    "project": {
+      "type": "string"
+    },
+    "version": {
+      "type": "object",
+      "properties": {
+        "version_hint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "begin_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "disappear_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resolved_begin_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resolved_disappear_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "version_hint"
+      ]
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "package_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "file_path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "file_path"
+      ]
+    },
+    "file_path": {
+      "type": "string"
+    },
+    "smell_type": {
+      "type": "string",
+      "enum": [
+        "LongMethod",
+        "ComplexMethod",
+        "LongParameterList",
+        "FeatureEnvy"
+      ]
+    },
+    "smell_metadata": {
+      "type": "object"
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "raw_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "comment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "diff": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit_history": {
+          "type": [
+            "string",
+            "array",
+            "null"
+          ]
+        },
+        "refactorings": {
+          "type": [
+            "string",
+            "array",
+            "null"
+          ]
+        },
+        "graph_context_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "graph_available": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "graph_available"
+      ]
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

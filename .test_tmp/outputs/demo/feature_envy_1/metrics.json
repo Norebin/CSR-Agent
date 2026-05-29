@@ -1,0 +1,20 @@
+{
+  "task_id": "feature_envy_1",
+  "smell_type": "FeatureEnvy",
+  "srr": 1.0,
+  "csr": 1.0,
+  "binary_sir": 0.0,
+  "count_sir": 0.0,
+  "assertion_pass_rate": null,
+  "token_cost": 0.0,
+  "time_cost": 0.08034230000339448,
+  "codebleu": 0.0,
+  "loop_count": 1,
+  "extra": {
+    "llm_usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    }
+  }
+}

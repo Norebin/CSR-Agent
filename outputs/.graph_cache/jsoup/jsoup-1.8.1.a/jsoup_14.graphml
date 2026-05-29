@@ -1,0 +1,2887 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="depth" for="edge" attr.name="depth" attr.type="long"/>
+<key id="direction" for="edge" attr.name="direction" attr.type="string"/>
+<key id="callee_signature" for="edge" attr.name="callee_signature" attr.type="string"/>
+<key id="caller_signature" for="edge" attr.name="caller_signature" attr.type="string"/>
+<key id="relation" for="edge" attr.name="relation" attr.type="string"/>
+<key id="is_smell" for="node" attr.name="is_smell" attr.type="boolean"/>
+<key id="method_parameters" for="node" attr.name="method_parameters" attr.type="string"/>
+<key id="method_name" for="node" attr.name="method_name" attr.type="string"/>
+<key id="hasjavadoc" for="node" attr.name="hasjavadoc" attr.type="boolean"/>
+<key id="methodsinvokedindirectlocalqty" for="node" attr.name="methodsinvokedindirectlocalqty" attr.type="long"/>
+<key id="methodsinvokedlocalqty" for="node" attr.name="methodsinvokedlocalqty" attr.type="long"/>
+<key id="methodsinvokedqty" for="node" attr.name="methodsinvokedqty" attr.type="long"/>
+<key id="parametersqty" for="node" attr.name="parametersqty" attr.type="long"/>
+<key id="returnsqty" for="node" attr.name="returnsqty" attr.type="long"/>
+<key id="line" for="node" attr.name="line" attr.type="long"/>
+<key id="constructor" for="node" attr.name="constructor" attr.type="boolean"/>
+<key id="method" for="node" attr.name="method" attr.type="string"/>
+<key id="return_type" for="node" attr.name="return_type" attr.type="string"/>
+<key id="version" for="node" attr.name="version" attr.type="string"/>
+<key id="project" for="node" attr.name="project" attr.type="string"/>
+<key id="logstatementsqty" for="node" attr.name="logstatementsqty" attr.type="long"/>
+<key id="modifiers" for="node" attr.name="modifiers" attr.type="long"/>
+<key id="uniquewordsqty" for="node" attr.name="uniquewordsqty" attr.type="long"/>
+<key id="lambdasqty" for="node" attr.name="lambdasqty" attr.type="long"/>
+<key id="innerclassesqty" for="node" attr.name="innerclassesqty" attr.type="long"/>
+<key id="anonymousclassesqty" for="node" attr.name="anonymousclassesqty" attr.type="long"/>
+<key id="maxnestedblocksqty" for="node" attr.name="maxnestedblocksqty" attr.type="long"/>
+<key id="variablesqty" for="node" attr.name="variablesqty" attr.type="long"/>
+<key id="mathoperationsqty" for="node" attr.name="mathoperationsqty" attr.type="long"/>
+<key id="assignmentsqty" for="node" attr.name="assignmentsqty" attr.type="long"/>
+<key id="numbersqty" for="node" attr.name="numbersqty" attr.type="long"/>
+<key id="stringliteralsqty" for="node" attr.name="stringliteralsqty" attr.type="long"/>
+<key id="parenthesizedexpsqty" for="node" attr.name="parenthesizedexpsqty" attr.type="long"/>
+<key id="trycatchqty" for="node" attr.name="trycatchqty" attr.type="long"/>
+<key id="comparisonsqty" for="node" attr.name="comparisonsqty" attr.type="long"/>
+<key id="loopqty" for="node" attr.name="loopqty" attr.type="long"/>
+<key id="returnqty" for="node" attr.name="returnqty" attr.type="long"/>
+<key id="loc" for="node" attr.name="loc" attr.type="long"/>
+<key id="nosi" for="node" attr.name="nosi" attr.type="long"/>
+<key id="synchronizedfieldsqty" for="node" attr.name="synchronizedfieldsqty" attr.type="long"/>
+<key id="finalfieldsqty" for="node" attr.name="finalfieldsqty" attr.type="long"/>
+<key id="defaultfieldsqty" for="node" attr.name="defaultfieldsqty" attr.type="long"/>
+<key id="protectedfieldsqty" for="node" attr.name="protectedfieldsqty" attr.type="long"/>
+<key id="privatefieldsqty" for="node" attr.name="privatefieldsqty" attr.type="long"/>
+<key id="publicfieldsqty" for="node" attr.name="publicfieldsqty" attr.type="long"/>
+<key id="staticfieldsqty" for="node" attr.name="staticfieldsqty" attr.type="long"/>
+<key id="totalfieldsqty" for="node" attr.name="totalfieldsqty" attr.type="long"/>
+<key id="synchronizedmethodsqty" for="node" attr.name="synchronizedmethodsqty" attr.type="long"/>
+<key id="finalmethodsqty" for="node" attr.name="finalmethodsqty" attr.type="long"/>
+<key id="abstractmethodsqty" for="node" attr.name="abstractmethodsqty" attr.type="long"/>
+<key id="visiblemethodsqty" for="node" attr.name="visiblemethodsqty" attr.type="long"/>
+<key id="defaultmethodsqty" for="node" attr.name="defaultmethodsqty" attr.type="long"/>
+<key id="protectedmethodsqty" for="node" attr.name="protectedmethodsqty" attr.type="long"/>
+<key id="privatemethodsqty" for="node" attr.name="privatemethodsqty" attr.type="long"/>
+<key id="publicmethodsqty" for="node" attr.name="publicmethodsqty" attr.type="long"/>
+<key id="staticmethodsqty" for="node" attr.name="staticmethodsqty" attr.type="long"/>
+<key id="totalmethodsqty" for="node" attr.name="totalmethodsqty" attr.type="long"/>
+<key id="lcc" for="node" attr.name="lcc" attr.type="double"/>
+<key id="tcc" for="node" attr.name="tcc" attr.type="double"/>
+<key id="lcom*" for="node" attr.name="lcom*" attr.type="double"/>
+<key id="lcom" for="node" attr.name="lcom" attr.type="long"/>
+<key id="rfc" for="node" attr.name="rfc" attr.type="long"/>
+<key id="noc" for="node" attr.name="noc" attr.type="long"/>
+<key id="dit" for="node" attr.name="dit" attr.type="long"/>
+<key id="wmc" for="node" attr.name="wmc" attr.type="long"/>
+<key id="fanout" for="node" attr.name="fanout" attr.type="long"/>
+<key id="fanin" for="node" attr.name="fanin" attr.type="long"/>
+<key id="cbomodified" for="node" attr.name="cbomodified" attr.type="long"/>
+<key id="cbo" for="node" attr.name="cbo" attr.type="long"/>
+<key id="class" for="node" attr.name="class" attr.type="string"/>
+<key id="file" for="node" attr.name="file" attr.type="string"/>
+<key id="label" for="node" attr.name="label" attr.type="string"/>
+<key id="type" for="node" attr.name="type" attr.type="string"/>
+<graph edgedefault="directed"><node id="org.jsoup.helper.DataUtil">
+  <data key="type">class</data>
+  <data key="label">DataUtil</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/helper/DataUtil.java</data>
+  <data key="class">org.jsoup.helper.DataUtil</data>
+  <data key="cbo">9</data>
+  <data key="cbomodified">13</data>
+  <data key="fanin">4</data>
+  <data key="fanout">9</data>
+  <data key="wmc">35</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">39</data>
+  <data key="lcom">36</data>
+  <data key="lcom*">0.8888889</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">9</data>
+  <data key="staticmethodsqty">8</data>
+  <data key="publicmethodsqty">3</data>
+  <data key="privatemethodsqty">1</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">5</data>
+  <data key="visiblemethodsqty">8</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">3</data>
+  <data key="staticfieldsqty">3</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">2</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">1</data>
+  <data key="finalfieldsqty">3</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">22</data>
+  <data key="loc">125</data>
+  <data key="returnqty">13</data>
+  <data key="loopqty">1</data>
+  <data key="comparisonsqty">11</data>
+  <data key="trycatchqty">3</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">16</data>
+  <data key="numbersqty">14</data>
+  <data key="assignmentsqty">38</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">20</data>
+  <data key="maxnestedblocksqty">6</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">116</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.helper.Validate">
+  <data key="type">class</data>
+  <data key="label">Validate</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/helper/Validate.java</data>
+  <data key="class">org.jsoup.helper.Validate</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">33</data>
+  <data key="fanin">32</data>
+  <data key="fanout">1</data>
+  <data key="wmc">24</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">2</data>
+  <data key="lcom">66</data>
+  <data key="lcom*">0.0</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">12</data>
+  <data key="staticmethodsqty">11</data>
+  <data key="publicmethodsqty">11</data>
+  <data key="privatemethodsqty">1</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">11</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">0</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">1</data>
+  <data key="loc">37</data>
+  <data key="returnqty">0</data>
+  <data key="loopqty">1</data>
+  <data key="comparisonsqty">7</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">5</data>
+  <data key="numbersqty">2</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">0</data>
+  <data key="maxnestedblocksqty">2</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">48</data>
+  <data key="modifiers">17</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.nodes.Document">
+  <data key="type">class</data>
+  <data key="label">Document</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/nodes/Document.java</data>
+  <data key="class">org.jsoup.nodes.Document</data>
+  <data key="cbo">10</data>
+  <data key="cbomodified">51</data>
+  <data key="fanin">41</data>
+  <data key="fanout">10</data>
+  <data key="wmc">38</data>
+  <data key="dit">3</data>
+  <data key="noc">0</data>
+  <data key="rfc">33</data>
+  <data key="lcom">200</data>
+  <data key="lcom*">0.8888889</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">21</data>
+  <data key="staticmethodsqty">1</data>
+  <data key="publicmethodsqty">18</data>
+  <data key="privatemethodsqty">3</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">18</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">3</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">3</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">6</data>
+  <data key="loc">205</data>
+  <data key="returnqty">19</data>
+  <data key="loopqty">6</data>
+  <data key="comparisonsqty">6</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">19</data>
+  <data key="numbersqty">4</data>
+  <data key="assignmentsqty">23</data>
+  <data key="mathoperationsqty">1</data>
+  <data key="variablesqty">19</data>
+  <data key="maxnestedblocksqty">4</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">2</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">126</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.nodes.Document$OutputSettings">
+  <data key="type">class</data>
+  <data key="label">Document$OutputSettings</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/nodes/Document.java</data>
+  <data key="class">org.jsoup.nodes.Document$OutputSettings</data>
+  <data key="cbo">4</data>
+  <data key="cbomodified">4</data>
+  <data key="fanin">0</data>
+  <data key="fanout">4</data>
+  <data key="wmc">18</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">9</data>
+  <data key="lcom">92</data>
+  <data key="lcom*">0.84821427</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">16</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">15</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">1</data>
+  <data key="visiblemethodsqty">16</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">7</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">7</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">4</data>
+  <data key="loc">75</data>
+  <data key="returnqty">15</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">1</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">1</data>
+  <data key="numbersqty">2</data>
+  <data key="assignmentsqty">16</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">8</data>
+  <data key="maxnestedblocksqty">1</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">1</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">132</data>
+  <data key="modifiers">9</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.nodes.Element">
+  <data key="type">class</data>
+  <data key="label">Element</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/nodes/Element.java</data>
+  <data key="class">org.jsoup.nodes.Element</data>
+  <data key="cbo">36</data>
+  <data key="cbomodified">127</data>
+  <data key="fanin">91</data>
+  <data key="fanout">36</data>
+  <data key="wmc">168</data>
+  <data key="dit">2</data>
+  <data key="noc">2</data>
+  <data key="rfc">113</data>
+  <data key="lcom">3801</data>
+  <data key="lcom*">0.8833333</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">90</data>
+  <data key="staticmethodsqty">5</data>
+  <data key="publicmethodsqty">81</data>
+  <data key="privatemethodsqty">6</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">3</data>
+  <data key="visiblemethodsqty">84</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">1</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">2</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">2</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">67</data>
+  <data key="loc">487</data>
+  <data key="returnqty">96</data>
+  <data key="loopqty">10</data>
+  <data key="comparisonsqty">16</data>
+  <data key="trycatchqty">3</data>
+  <data key="parenthesizedexpsqty">10</data>
+  <data key="stringliteralsqty">28</data>
+  <data key="numbersqty">30</data>
+  <data key="assignmentsqty">60</data>
+  <data key="mathoperationsqty">14</data>
+  <data key="variablesqty">53</data>
+  <data key="maxnestedblocksqty">3</data>
+  <data key="anonymousclassesqty">1</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">420</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.parser.Parser">
+  <data key="type">class</data>
+  <data key="label">Parser</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/parser/Parser.java</data>
+  <data key="class">org.jsoup.parser.Parser</data>
+  <data key="cbo">11</data>
+  <data key="cbomodified">24</data>
+  <data key="fanin">13</data>
+  <data key="fanout">11</data>
+  <data key="wmc">18</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">14</data>
+  <data key="lcom">55</data>
+  <data key="lcom*">0.8</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">15</data>
+  <data key="staticmethodsqty">8</data>
+  <data key="publicmethodsqty">15</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">15</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">4</data>
+  <data key="staticfieldsqty">1</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">4</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">1</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">9</data>
+  <data key="loc">66</data>
+  <data key="returnqty">14</data>
+  <data key="loopqty">1</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">2</data>
+  <data key="assignmentsqty">15</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">13</data>
+  <data key="maxnestedblocksqty">1</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">156</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.select.Elements">
+  <data key="type">class</data>
+  <data key="label">Elements</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/select/Elements.java</data>
+  <data key="class">org.jsoup.select.Elements</data>
+  <data key="cbo">9</data>
+  <data key="cbomodified">39</data>
+  <data key="fanin">30</data>
+  <data key="fanout">9</data>
+  <data key="wmc">105</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">69</data>
+  <data key="lcom">0</data>
+  <data key="lcom*">0.092307694</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">65</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">65</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">65</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">1</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">1</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">6</data>
+  <data key="loc">296</data>
+  <data key="returnqty">63</data>
+  <data key="loopqty">27</data>
+  <data key="comparisonsqty">3</data>
+  <data key="trycatchqty">1</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">5</data>
+  <data key="numbersqty">6</data>
+  <data key="assignmentsqty">15</data>
+  <data key="mathoperationsqty">1</data>
+  <data key="variablesqty">11</data>
+  <data key="maxnestedblocksqty">2</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">245</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.parser.ParseErrorList">
+  <data key="type">class</data>
+  <data key="label">ParseErrorList</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/parser/ParseErrorList.java</data>
+  <data key="class">org.jsoup.parser.ParseErrorList</data>
+  <data key="cbo">2</data>
+  <data key="cbomodified">8</data>
+  <data key="fanin">6</data>
+  <data key="fanout">2</data>
+  <data key="wmc">6</data>
+  <data key="dit">4</data>
+  <data key="noc">0</data>
+  <data key="rfc">1</data>
+  <data key="lcom">0</data>
+  <data key="lcom*">0.5</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">5</data>
+  <data key="staticmethodsqty">2</data>
+  <data key="publicmethodsqty">0</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">5</data>
+  <data key="visiblemethodsqty">5</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">2</data>
+  <data key="staticfieldsqty">1</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">2</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">2</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">0</data>
+  <data key="loc">20</data>
+  <data key="returnqty">4</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">3</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">2</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">27</data>
+  <data key="modifiers">0</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.parser.TreeBuilder">
+  <data key="type">class</data>
+  <data key="label">TreeBuilder</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/parser/TreeBuilder.java</data>
+  <data key="class">org.jsoup.parser.TreeBuilder</data>
+  <data key="cbo">9</data>
+  <data key="cbomodified">25</data>
+  <data key="fanin">16</data>
+  <data key="fanout">9</data>
+  <data key="wmc">8</data>
+  <data key="dit">1</data>
+  <data key="noc">2</data>
+  <data key="rfc">8</data>
+  <data key="lcom">5</data>
+  <data key="lcom*">0.71428573</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">6</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">0</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">4</data>
+  <data key="defaultmethodsqty">2</data>
+  <data key="visiblemethodsqty">6</data>
+  <data key="abstractmethodsqty">1</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">7</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">5</data>
+  <data key="defaultfieldsqty">2</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">3</data>
+  <data key="loc">38</data>
+  <data key="returnqty">3</data>
+  <data key="loopqty">1</data>
+  <data key="comparisonsqty">1</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">2</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">7</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">8</data>
+  <data key="maxnestedblocksqty">2</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">32</data>
+  <data key="modifiers">1024</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.helper.HttpConnection$Response">
+  <data key="type">class</data>
+  <data key="label">HttpConnection$Response</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/helper/HttpConnection.java</data>
+  <data key="class">org.jsoup.helper.HttpConnection$Response</data>
+  <data key="cbo">16</data>
+  <data key="cbomodified">16</data>
+  <data key="fanin">0</data>
+  <data key="fanout">16</data>
+  <data key="wmc">69</data>
+  <data key="dit">2</data>
+  <data key="noc">0</data>
+  <data key="rfc">104</data>
+  <data key="lcom">80</data>
+  <data key="lcom*">0.83529407</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">17</data>
+  <data key="staticmethodsqty">6</data>
+  <data key="publicmethodsqty">7</data>
+  <data key="privatemethodsqty">6</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">4</data>
+  <data key="visiblemethodsqty">11</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">10</data>
+  <data key="staticfieldsqty">2</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">10</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">2</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">23</data>
+  <data key="loc">193</data>
+  <data key="returnqty">12</data>
+  <data key="loopqty">8</data>
+  <data key="comparisonsqty">22</data>
+  <data key="trycatchqty">2</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">26</data>
+  <data key="numbersqty">9</data>
+  <data key="assignmentsqty">50</data>
+  <data key="mathoperationsqty">1</data>
+  <data key="variablesqty">35</data>
+  <data key="maxnestedblocksqty">4</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">126</data>
+  <data key="modifiers">9</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.helper.DataUtilTest">
+  <data key="type">class</data>
+  <data key="label">DataUtilTest</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/test/java/org/jsoup/helper/DataUtilTest.java</data>
+  <data key="class">org.jsoup.helper.DataUtilTest</data>
+  <data key="cbo">6</data>
+  <data key="cbomodified">6</data>
+  <data key="fanin">0</data>
+  <data key="fanout">6</data>
+  <data key="wmc">8</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">11</data>
+  <data key="lcom">28</data>
+  <data key="lcom*">0.0</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">8</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">8</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">8</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">0</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">22</data>
+  <data key="loc">43</data>
+  <data key="returnqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">34</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">6</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">6</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">56</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.Jsoup">
+  <data key="type">class</data>
+  <data key="label">Jsoup</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/main/java/org/jsoup/Jsoup.java</data>
+  <data key="class">org.jsoup.Jsoup</data>
+  <data key="cbo">10</data>
+  <data key="cbomodified">30</data>
+  <data key="fanin">20</data>
+  <data key="fanout">10</data>
+  <data key="wmc">16</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">18</data>
+  <data key="lcom">120</data>
+  <data key="lcom*">0.0</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">16</data>
+  <data key="staticmethodsqty">15</data>
+  <data key="publicmethodsqty">15</data>
+  <data key="privatemethodsqty">1</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">15</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">0</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">14</data>
+  <data key="loc">60</data>
+  <data key="returnqty">15</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">4</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">9</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">9</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">225</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.integration.ParseTest">
+  <data key="type">class</data>
+  <data key="label">ParseTest</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/test/java/org/jsoup/integration/ParseTest.java</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="cbo">8</data>
+  <data key="cbomodified">10</data>
+  <data key="fanin">2</data>
+  <data key="fanout">8</data>
+  <data key="wmc">15</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">30</data>
+  <data key="lcom">78</data>
+  <data key="lcom*">0.0</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">13</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">12</data>
+  <data key="privatemethodsqty">1</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">12</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">0</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">13</data>
+  <data key="loc">112</data>
+  <data key="returnqty">2</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">2</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">93</data>
+  <data key="numbersqty">4</data>
+  <data key="assignmentsqty">37</data>
+  <data key="mathoperationsqty">1</data>
+  <data key="variablesqty">32</data>
+  <data key="maxnestedblocksqty">1</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">193</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.nodes.DocumentTest">
+  <data key="type">class</data>
+  <data key="label">DocumentTest</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/test/java/org/jsoup/nodes/DocumentTest.java</data>
+  <data key="class">org.jsoup.nodes.DocumentTest</data>
+  <data key="cbo">10</data>
+  <data key="cbomodified">10</data>
+  <data key="fanin">0</data>
+  <data key="fanout">10</data>
+  <data key="wmc">12</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">30</data>
+  <data key="lcom">55</data>
+  <data key="lcom*">0.0</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">11</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">11</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">11</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">0</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">19</data>
+  <data key="loc">92</data>
+  <data key="returnqty">0</data>
+  <data key="loopqty">1</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">69</data>
+  <data key="numbersqty">4</data>
+  <data key="assignmentsqty">25</data>
+  <data key="mathoperationsqty">2</data>
+  <data key="variablesqty">21</data>
+  <data key="maxnestedblocksqty">1</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">106</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.parser.XmlTreeBuilderTest">
+  <data key="type">class</data>
+  <data key="label">XmlTreeBuilderTest</data>
+  <data key="file">/model/data/Research/sourceProject/actionableCS/jsoup/jsoup-1.8.1.a/src/test/java/org/jsoup/parser/XmlTreeBuilderTest.java</data>
+  <data key="class">org.jsoup.parser.XmlTreeBuilderTest</data>
+  <data key="cbo">15</data>
+  <data key="cbomodified">15</data>
+  <data key="fanin">0</data>
+  <data key="fanout">15</data>
+  <data key="wmc">10</data>
+  <data key="dit">1</data>
+  <data key="noc">0</data>
+  <data key="rfc">29</data>
+  <data key="lcom">45</data>
+  <data key="lcom*">0.0</data>
+  <data key="tcc">0.0</data>
+  <data key="lcc">0.0</data>
+  <data key="totalmethodsqty">10</data>
+  <data key="staticmethodsqty">0</data>
+  <data key="publicmethodsqty">10</data>
+  <data key="privatemethodsqty">0</data>
+  <data key="protectedmethodsqty">0</data>
+  <data key="defaultmethodsqty">0</data>
+  <data key="visiblemethodsqty">10</data>
+  <data key="abstractmethodsqty">0</data>
+  <data key="finalmethodsqty">0</data>
+  <data key="synchronizedmethodsqty">0</data>
+  <data key="totalfieldsqty">0</data>
+  <data key="staticfieldsqty">0</data>
+  <data key="publicfieldsqty">0</data>
+  <data key="privatefieldsqty">0</data>
+  <data key="protectedfieldsqty">0</data>
+  <data key="defaultfieldsqty">0</data>
+  <data key="finalfieldsqty">0</data>
+  <data key="synchronizedfieldsqty">0</data>
+  <data key="nosi">22</data>
+  <data key="loc">66</data>
+  <data key="returnqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">1</data>
+  <data key="stringliteralsqty">40</data>
+  <data key="numbersqty">8</data>
+  <data key="assignmentsqty">24</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="variablesqty">24</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">83</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+</node>
+<node id="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="type">method</data>
+  <data key="label">parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="class">org.jsoup.helper.DataUtil</data>
+  <data key="method">parseByteData/4[java.nio.ByteBuffer,java.lang.String,java.lang.String,org.jsoup.parser.Parser]</data>
+  <data key="constructor">False</data>
+  <data key="line">69</data>
+  <data key="cbo">8</data>
+  <data key="cbomodified">15</data>
+  <data key="fanin">6</data>
+  <data key="fanout">9</data>
+  <data key="wmc">14</data>
+  <data key="rfc">20</data>
+  <data key="loc">51</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">4</data>
+  <data key="parametersqty">4</data>
+  <data key="methodsinvokedqty">20</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">7</data>
+  <data key="trycatchqty">1</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">10</data>
+  <data key="numbersqty">5</data>
+  <data key="assignmentsqty">18</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">6</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">35</data>
+  <data key="modifiers">8</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">parseByteData</data>
+  <data key="method_parameters">java.nio.ByteBuffer;java.lang.String;java.lang.String;org.jsoup.parser.Parser</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.DataUtil#getCharsetFromContentType(java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">getCharsetFromContentType(java.lang.String)</data>
+  <data key="return_type">java.lang.String</data>
+  <data key="class">org.jsoup.helper.DataUtil</data>
+  <data key="method">getCharsetFromContentType/1[java.lang.String]</data>
+  <data key="constructor">False</data>
+  <data key="line">175</data>
+  <data key="cbo">0</data>
+  <data key="cbomodified">8</data>
+  <data key="fanin">8</data>
+  <data key="fanout">0</data>
+  <data key="wmc">7</data>
+  <data key="rfc">8</data>
+  <data key="loc">18</data>
+  <data key="returnsqty">6</data>
+  <data key="variablesqty">2</data>
+  <data key="parametersqty">1</data>
+  <data key="methodsinvokedqty">8</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">2</data>
+  <data key="trycatchqty">1</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">2</data>
+  <data key="numbersqty">2</data>
+  <data key="assignmentsqty">4</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">3</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">34</data>
+  <data key="modifiers">8</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">getCharsetFromContentType</data>
+  <data key="method_parameters">java.lang.String</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.Validate#notEmpty(java.lang.String, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">notEmpty(java.lang.String, java.lang.String)</data>
+  <data key="return_type">void</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Document#outputSettings()">
+  <data key="type">method</data>
+  <data key="label">outputSettings()</data>
+  <data key="return_type">org.jsoup.nodes.Document$OutputSettings</data>
+  <data key="class">org.jsoup.nodes.Document</data>
+  <data key="method">outputSettings/0</data>
+  <data key="constructor">False</data>
+  <data key="line">392</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">26</data>
+  <data key="fanin">26</data>
+  <data key="fanout">0</data>
+  <data key="wmc">1</data>
+  <data key="rfc">0</data>
+  <data key="loc">3</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">0</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">6</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">outputSettings</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Document#select(java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">select(java.lang.String)</data>
+  <data key="return_type">org.jsoup.select.Elements</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Document$OutputSettings#charset(java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">charset(java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document$OutputSettings</data>
+  <data key="class">org.jsoup.nodes.Document$OutputSettings</data>
+  <data key="method">charset/1[java.lang.String]</data>
+  <data key="constructor">False</data>
+  <data key="line">288</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">11</data>
+  <data key="fanin">10</data>
+  <data key="fanout">1</data>
+  <data key="wmc">1</data>
+  <data key="rfc">2</data>
+  <data key="loc">4</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">1</data>
+  <data key="methodsinvokedqty">2</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">10</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">charset</data>
+  <data key="method_parameters">java.lang.String</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Element#attr(java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">attr(java.lang.String)</data>
+  <data key="return_type">java.lang.String</data>
+  <data key="class">org.jsoup.nodes.Element</data>
+  <data key="method">attr/2[java.lang.String,java.lang.String]</data>
+  <data key="constructor">False</data>
+  <data key="line">115</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">5</data>
+  <data key="fanout">0</data>
+  <data key="wmc">1</data>
+  <data key="rfc">1</data>
+  <data key="loc">4</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">2</data>
+  <data key="methodsinvokedqty">1</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">18</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">attr</data>
+  <data key="method_parameters">java.lang.String;java.lang.String</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Element#hasAttr(java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">hasAttr(java.lang.String)</data>
+  <data key="return_type">boolean</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">parseInput(java.lang.String, java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="class">org.jsoup.parser.Parser</data>
+  <data key="method">parseInput/2[java.lang.String,java.lang.String]</data>
+  <data key="constructor">False</data>
+  <data key="line">28</data>
+  <data key="cbo">4</data>
+  <data key="cbomodified">7</data>
+  <data key="fanin">3</data>
+  <data key="fanout">4</data>
+  <data key="wmc">2</data>
+  <data key="rfc">4</data>
+  <data key="loc">5</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">1</data>
+  <data key="parametersqty">2</data>
+  <data key="methodsinvokedqty">4</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">11</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">parseInput</data>
+  <data key="method_parameters">java.lang.String;java.lang.String</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.select.Elements#first()">
+  <data key="type">method</data>
+  <data key="label">first()</data>
+  <data key="return_type">org.jsoup.nodes.Element</data>
+  <data key="class">org.jsoup.select.Elements</data>
+  <data key="method">first/0</data>
+  <data key="constructor">False</data>
+  <data key="line">472</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">120</data>
+  <data key="fanin">120</data>
+  <data key="fanout">0</data>
+  <data key="wmc">2</data>
+  <data key="rfc">2</data>
+  <data key="loc">3</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">2</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">1</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">11</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">first</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Document#outputSettings(org.jsoup.nodes.Document$OutputSettings)">
+  <data key="type">method</data>
+  <data key="label">outputSettings(org.jsoup.nodes.Document$OutputSettings)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.Validate#notNull(java.lang.Object)">
+  <data key="type">method</data>
+  <data key="label">notNull(java.lang.Object)</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.helper.Validate</data>
+  <data key="method">notNull/1[java.lang.Object]</data>
+  <data key="constructor">False</data>
+  <data key="line">14</data>
+  <data key="cbo">0</data>
+  <data key="cbomodified">50</data>
+  <data key="fanin">50</data>
+  <data key="fanout">0</data>
+  <data key="wmc">2</data>
+  <data key="rfc">0</data>
+  <data key="loc">3</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">1</data>
+  <data key="methodsinvokedqty">0</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">1</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">1</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">1</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">17</data>
+  <data key="modifiers">9</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">notNull</data>
+  <data key="method_parameters">java.lang.Object</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.Document$OutputSettings#charset(java.nio.charset.Charset)">
+  <data key="type">method</data>
+  <data key="label">charset(java.nio.charset.Charset)</data>
+  <data key="return_type">org.jsoup.nodes.Document$OutputSettings</data>
+  <data key="class">org.jsoup.nodes.Document$OutputSettings</data>
+  <data key="method">charset/1[java.nio.charset.Charset]</data>
+  <data key="constructor">False</data>
+  <data key="line">276</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">1</data>
+  <data key="fanin">1</data>
+  <data key="fanout">0</data>
+  <data key="wmc">1</data>
+  <data key="rfc">1</data>
+  <data key="loc">5</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">1</data>
+  <data key="methodsinvokedqty">1</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">10</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">charset</data>
+  <data key="method_parameters">java.nio.charset.Charset</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.ParseErrorList#noTracking()">
+  <data key="type">method</data>
+  <data key="label">noTracking()</data>
+  <data key="return_type">org.jsoup.parser.ParseErrorList</data>
+  <data key="class">org.jsoup.parser.ParseErrorList</data>
+  <data key="method">noTracking/0</data>
+  <data key="constructor">False</data>
+  <data key="line">27</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">7</data>
+  <data key="fanin">6</data>
+  <data key="fanout">1</data>
+  <data key="wmc">1</data>
+  <data key="rfc">0</data>
+  <data key="loc">3</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">0</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">2</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">5</data>
+  <data key="modifiers">8</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">noTracking</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.ParseErrorList#tracking(int)">
+  <data key="type">method</data>
+  <data key="label">tracking(int)</data>
+  <data key="return_type">org.jsoup.parser.ParseErrorList</data>
+  <data key="class">org.jsoup.parser.ParseErrorList</data>
+  <data key="method">tracking/1[int]</data>
+  <data key="constructor">False</data>
+  <data key="line">31</data>
+  <data key="cbo">1</data>
+  <data key="cbomodified">2</data>
+  <data key="fanin">1</data>
+  <data key="fanout">1</data>
+  <data key="wmc">1</data>
+  <data key="rfc">0</data>
+  <data key="loc">3</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">1</data>
+  <data key="methodsinvokedqty">0</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">6</data>
+  <data key="modifiers">8</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">tracking</data>
+  <data key="method_parameters">int</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.Parser#isTrackErrors()">
+  <data key="type">method</data>
+  <data key="label">isTrackErrors()</data>
+  <data key="return_type">boolean</data>
+  <data key="class">org.jsoup.parser.Parser</data>
+  <data key="method">isTrackErrors/0</data>
+  <data key="constructor">False</data>
+  <data key="line">57</data>
+  <data key="cbo">0</data>
+  <data key="cbomodified">1</data>
+  <data key="fanin">1</data>
+  <data key="fanout">0</data>
+  <data key="wmc">2</data>
+  <data key="rfc">0</data>
+  <data key="loc">3</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">0</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">1</data>
+  <data key="assignmentsqty">0</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">10</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">True</data>
+  <data key="method_name">isTrackErrors</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.TreeBuilder#parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)">
+  <data key="type">method</data>
+  <data key="label">parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.ParseErrorList#ParseErrorList(int, int)">
+  <data key="type">method</data>
+  <data key="label">ParseErrorList(int, int)</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.parser.ParseErrorList</data>
+  <data key="method">ParseErrorList/2[int,int]</data>
+  <data key="constructor">True</data>
+  <data key="line">14</data>
+  <data key="cbo">0</data>
+  <data key="cbomodified">2</data>
+  <data key="fanin">2</data>
+  <data key="fanout">0</data>
+  <data key="wmc">1</data>
+  <data key="rfc">0</data>
+  <data key="loc">4</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">2</data>
+  <data key="methodsinvokedqty">0</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">1</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">7</data>
+  <data key="modifiers">0</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">ParseErrorList</data>
+  <data key="method_parameters">int;int</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.TreeBuilder#initialiseParse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)">
+  <data key="type">method</data>
+  <data key="label">initialiseParse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.parser.TreeBuilder</data>
+  <data key="method">initialiseParse/3[java.lang.String,java.lang.String,org.jsoup.parser.ParseErrorList]</data>
+  <data key="constructor">False</data>
+  <data key="line">23</data>
+  <data key="cbo">7</data>
+  <data key="cbomodified">7</data>
+  <data key="fanin">2</data>
+  <data key="fanout">5</data>
+  <data key="wmc">1</data>
+  <data key="rfc">1</data>
+  <data key="loc">10</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">0</data>
+  <data key="parametersqty">3</data>
+  <data key="methodsinvokedqty">1</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">2</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">6</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">17</data>
+  <data key="modifiers">4</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">initialiseParse</data>
+  <data key="method_parameters">java.lang.String;java.lang.String;org.jsoup.parser.ParseErrorList</data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.TreeBuilder#runParser()">
+  <data key="type">method</data>
+  <data key="label">runParser()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.parser.TreeBuilder</data>
+  <data key="method">runParser/0</data>
+  <data key="constructor">False</data>
+  <data key="line">45</data>
+  <data key="cbo">3</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">3</data>
+  <data key="fanout">2</data>
+  <data key="wmc">3</data>
+  <data key="rfc">2</data>
+  <data key="loc">7</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">1</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">2</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">1</data>
+  <data key="comparisonsqty">1</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">0</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">1</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">2</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">6</data>
+  <data key="modifiers">4</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">runParser</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.HttpConnection$Response#parse()">
+  <data key="type">method</data>
+  <data key="label">parse()</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="class">org.jsoup.helper.HttpConnection$Response</data>
+  <data key="method">parse/0</data>
+  <data key="constructor">False</data>
+  <data key="line">530</data>
+  <data key="cbo">5</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">0</data>
+  <data key="fanout">5</data>
+  <data key="wmc">1</data>
+  <data key="rfc">8</data>
+  <data key="loc">7</data>
+  <data key="returnsqty">1</data>
+  <data key="variablesqty">1</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">8</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">1</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">14</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">parse</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.DataUtil#load(java.io.File, java.lang.String, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">load(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">load(java.io.InputStream, java.lang.String, java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="type">method</data>
+  <data key="label">load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMark()">
+  <data key="type">method</data>
+  <data key="label">discardsSpuriousByteOrderMark()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.helper.DataUtilTest</data>
+  <data key="method">discardsSpuriousByteOrderMark/0</data>
+  <data key="constructor">False</data>
+  <data key="line">31</data>
+  <data key="cbo">5</data>
+  <data key="cbomodified">4</data>
+  <data key="fanin">0</data>
+  <data key="fanout">4</data>
+  <data key="wmc">1</data>
+  <data key="rfc">7</data>
+  <data key="loc">6</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">7</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">5</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">15</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">discardsSpuriousByteOrderMark</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMarkWhenNoCharsetSet()">
+  <data key="type">method</data>
+  <data key="label">discardsSpuriousByteOrderMarkWhenNoCharsetSet()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.helper.DataUtilTest</data>
+  <data key="method">discardsSpuriousByteOrderMarkWhenNoCharsetSet/0</data>
+  <data key="constructor">False</data>
+  <data key="line">38</data>
+  <data key="cbo">6</data>
+  <data key="cbomodified">6</data>
+  <data key="fanin">0</data>
+  <data key="fanout">6</data>
+  <data key="wmc">1</data>
+  <data key="rfc">10</data>
+  <data key="loc">7</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">10</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">5</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">19</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">discardsSpuriousByteOrderMarkWhenNoCharsetSet</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.Jsoup#parse(java.io.File, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">parse(java.io.File, java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String)">
+  <data key="type">method</data>
+  <data key="label">parse(java.io.InputStream, java.lang.String, java.lang.String)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="type">method</data>
+  <data key="label">parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="return_type">org.jsoup.nodes.Document</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testBinary()">
+  <data key="type">method</data>
+  <data key="label">testBinary()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testBinary/0</data>
+  <data key="constructor">False</data>
+  <data key="line">69</data>
+  <data key="cbo">5</data>
+  <data key="cbomodified">3</data>
+  <data key="fanin">0</data>
+  <data key="fanout">3</data>
+  <data key="wmc">1</data>
+  <data key="rfc">5</data>
+  <data key="loc">5</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">2</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">5</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">3</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">13</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testBinary</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testBaidu()">
+  <data key="type">method</data>
+  <data key="label">testBaidu()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testBaidu/0</data>
+  <data key="constructor">False</data>
+  <data key="line">88</data>
+  <data key="cbo">8</data>
+  <data key="cbomodified">11</data>
+  <data key="fanin">0</data>
+  <data key="fanout">11</data>
+  <data key="wmc">1</data>
+  <data key="rfc">13</data>
+  <data key="loc">14</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">4</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">13</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">16</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">5</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">20</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testBaidu</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testBaiduVariant()">
+  <data key="type">method</data>
+  <data key="label">testBaiduVariant()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testBaiduVariant/0</data>
+  <data key="constructor">False</data>
+  <data key="line">112</data>
+  <data key="cbo">7</data>
+  <data key="cbomodified">6</data>
+  <data key="fanin">0</data>
+  <data key="fanout">6</data>
+  <data key="wmc">1</data>
+  <data key="rfc">8</data>
+  <data key="loc">6</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">2</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">8</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">5</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">16</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testBaiduVariant</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testGoogleSearchIpod()">
+  <data key="type">method</data>
+  <data key="label">testGoogleSearchIpod()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testGoogleSearchIpod/0</data>
+  <data key="constructor">False</data>
+  <data key="line">55</data>
+  <data key="cbo">7</data>
+  <data key="cbomodified">7</data>
+  <data key="fanin">0</data>
+  <data key="fanout">7</data>
+  <data key="wmc">1</data>
+  <data key="rfc">8</data>
+  <data key="loc">9</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">8</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">9</data>
+  <data key="numbersqty">3</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">51</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testGoogleSearchIpod</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testHtml5Charset()">
+  <data key="type">method</data>
+  <data key="label">testHtml5Charset()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testHtml5Charset/0</data>
+  <data key="constructor">False</data>
+  <data key="line">123</data>
+  <data key="cbo">6</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">0</data>
+  <data key="fanout">5</data>
+  <data key="wmc">1</data>
+  <data key="rfc">9</data>
+  <data key="loc">14</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">2</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">9</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">12</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">6</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">17</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testHtml5Charset</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testNewsHomepage()">
+  <data key="type">method</data>
+  <data key="label">testNewsHomepage()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testNewsHomepage/0</data>
+  <data key="constructor">False</data>
+  <data key="line">37</data>
+  <data key="cbo">7</data>
+  <data key="cbomodified">7</data>
+  <data key="fanin">0</data>
+  <data key="fanout">7</data>
+  <data key="wmc">1</data>
+  <data key="rfc">9</data>
+  <data key="loc">12</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">4</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">9</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">16</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">4</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">38</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testNewsHomepage</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testNytArticle()">
+  <data key="type">method</data>
+  <data key="label">testNytArticle()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testNytArticle/0</data>
+  <data key="constructor">False</data>
+  <data key="line">154</data>
+  <data key="cbo">6</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">0</data>
+  <data key="fanout">5</data>
+  <data key="wmc">1</data>
+  <data key="rfc">6</data>
+  <data key="loc">6</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">6</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">4</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">28</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testNytArticle</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testSmhBizArticle()">
+  <data key="type">method</data>
+  <data key="label">testSmhBizArticle()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testSmhBizArticle/0</data>
+  <data key="constructor">False</data>
+  <data key="line">22</data>
+  <data key="cbo">6</data>
+  <data key="cbomodified">6</data>
+  <data key="fanin">0</data>
+  <data key="fanout">6</data>
+  <data key="wmc">1</data>
+  <data key="rfc">7</data>
+  <data key="loc">8</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">7</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">8</data>
+  <data key="numbersqty">1</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">27</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testSmhBizArticle</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testYahooArticle()">
+  <data key="type">method</data>
+  <data key="label">testYahooArticle()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testYahooArticle/0</data>
+  <data key="constructor">False</data>
+  <data key="line">164</data>
+  <data key="cbo">6</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">0</data>
+  <data key="fanout">5</data>
+  <data key="wmc">1</data>
+  <data key="rfc">6</data>
+  <data key="loc">6</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">6</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">5</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">39</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testYahooArticle</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testYahooJp()">
+  <data key="type">method</data>
+  <data key="label">testYahooJp()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testYahooJp/0</data>
+  <data key="constructor">False</data>
+  <data key="line">77</data>
+  <data key="cbo">7</data>
+  <data key="cbomodified">7</data>
+  <data key="fanin">0</data>
+  <data key="fanout">7</data>
+  <data key="wmc">1</data>
+  <data key="rfc">8</data>
+  <data key="loc">8</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">8</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">8</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">43</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testYahooJp</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.nodes.DocumentTest#testLocation()">
+  <data key="type">method</data>
+  <data key="label">testLocation()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.nodes.DocumentTest</data>
+  <data key="method">testLocation/0</data>
+  <data key="constructor">False</data>
+  <data key="line">91</data>
+  <data key="cbo">5</data>
+  <data key="cbomodified">5</data>
+  <data key="fanin">0</data>
+  <data key="fanout">5</data>
+  <data key="wmc">1</data>
+  <data key="rfc">5</data>
+  <data key="loc">14</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">4</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">5</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">9</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">8</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">47</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testLocation</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.integration.ParseTest#testBrokenHtml5CharsetWithASingleDoubleQuote()">
+  <data key="type">method</data>
+  <data key="label">testBrokenHtml5CharsetWithASingleDoubleQuote()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.integration.ParseTest</data>
+  <data key="method">testBrokenHtml5CharsetWithASingleDoubleQuote/0</data>
+  <data key="constructor">False</data>
+  <data key="line">144</data>
+  <data key="cbo">5</data>
+  <data key="cbomodified">4</data>
+  <data key="fanin">0</data>
+  <data key="fanout">4</data>
+  <data key="wmc">1</data>
+  <data key="rfc">6</data>
+  <data key="loc">5</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">2</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">6</data>
+  <data key="methodsinvokedlocalqty">1</data>
+  <data key="methodsinvokedindirectlocalqty">1</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">6</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">2</data>
+  <data key="mathoperationsqty">1</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">28</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testBrokenHtml5CharsetWithASingleDoubleQuote</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<node id="org.jsoup.parser.XmlTreeBuilderTest#testSupplyParserToDataStream()">
+  <data key="type">method</data>
+  <data key="label">testSupplyParserToDataStream()</data>
+  <data key="return_type">void</data>
+  <data key="class">org.jsoup.parser.XmlTreeBuilderTest</data>
+  <data key="method">testSupplyParserToDataStream/0</data>
+  <data key="constructor">False</data>
+  <data key="line">84</data>
+  <data key="cbo">7</data>
+  <data key="cbomodified">4</data>
+  <data key="fanin">0</data>
+  <data key="fanout">4</data>
+  <data key="wmc">1</data>
+  <data key="rfc">7</data>
+  <data key="loc">6</data>
+  <data key="returnsqty">0</data>
+  <data key="variablesqty">3</data>
+  <data key="parametersqty">0</data>
+  <data key="methodsinvokedqty">7</data>
+  <data key="methodsinvokedlocalqty">0</data>
+  <data key="methodsinvokedindirectlocalqty">0</data>
+  <data key="loopqty">0</data>
+  <data key="comparisonsqty">0</data>
+  <data key="trycatchqty">0</data>
+  <data key="parenthesizedexpsqty">0</data>
+  <data key="stringliteralsqty">3</data>
+  <data key="numbersqty">0</data>
+  <data key="assignmentsqty">3</data>
+  <data key="mathoperationsqty">0</data>
+  <data key="maxnestedblocksqty">0</data>
+  <data key="anonymousclassesqty">0</data>
+  <data key="innerclassesqty">0</data>
+  <data key="lambdasqty">0</data>
+  <data key="uniquewordsqty">21</data>
+  <data key="modifiers">1</data>
+  <data key="logstatementsqty">0</data>
+  <data key="hasjavadoc">False</data>
+  <data key="method_name">testSupplyParserToDataStream</data>
+  <data key="method_parameters"></data>
+  <data key="project">jsoup</data>
+  <data key="version">1.8.1.a</data>
+  <data key="is_smell">False</data>
+</node>
+<edge source="org.jsoup.helper.DataUtil" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil" target="org.jsoup.helper.DataUtil#load(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil" target="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil" target="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil" target="org.jsoup.helper.DataUtil#getCharsetFromContentType(java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.Validate" target="org.jsoup.helper.Validate#notNull(java.lang.Object)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.Validate" target="org.jsoup.helper.Validate#notEmpty(java.lang.String, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document" target="org.jsoup.nodes.Document#outputSettings()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document" target="org.jsoup.nodes.Document#select(java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document" target="org.jsoup.nodes.Document#outputSettings(org.jsoup.nodes.Document$OutputSettings)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document$OutputSettings" target="org.jsoup.nodes.Document$OutputSettings#charset(java.nio.charset.Charset)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document$OutputSettings" target="org.jsoup.nodes.Document$OutputSettings#charset(java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Element" target="org.jsoup.nodes.Element#hasAttr(java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Element" target="org.jsoup.nodes.Element#attr(java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.Parser" target="org.jsoup.parser.Parser#isTrackErrors()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.Parser" target="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.select.Elements" target="org.jsoup.select.Elements#first()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList" target="org.jsoup.parser.ParseErrorList#noTracking()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList" target="org.jsoup.parser.ParseErrorList#ParseErrorList(int, int)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList" target="org.jsoup.parser.ParseErrorList#tracking(int)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder" target="org.jsoup.parser.TreeBuilder#initialiseParse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder" target="org.jsoup.parser.TreeBuilder#runParser()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder" target="org.jsoup.parser.TreeBuilder#parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.HttpConnection$Response" target="org.jsoup.helper.HttpConnection$Response#parse()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtilTest" target="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMarkWhenNoCharsetSet()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtilTest" target="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMark()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup" target="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup" target="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String)">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testGoogleSearchIpod()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testSmhBizArticle()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testBaiduVariant()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testBaidu()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testYahooJp()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testYahooArticle()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testHtml5Charset()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testBrokenHtml5CharsetWithASingleDoubleQuote()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testBinary()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testNytArticle()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest" target="org.jsoup.integration.ParseTest#testNewsHomepage()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.DocumentTest" target="org.jsoup.nodes.DocumentTest#testLocation()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.XmlTreeBuilderTest" target="org.jsoup.parser.XmlTreeBuilderTest#testSupplyParserToDataStream()">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.helper.DataUtil">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.helper.DataUtil#getCharsetFromContentType(java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">java.lang.String getCharsetFromContentType(java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.helper.Validate#notEmpty(java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">void notEmpty(java.lang.String, java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.nodes.Document#outputSettings()">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document$OutputSettings outputSettings()</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.nodes.Document#select(java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.select.Elements select(java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.nodes.Document$OutputSettings#charset(java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document$OutputSettings charset(java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.nodes.Element#attr(java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">java.lang.String attr(java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.nodes.Element#hasAttr(java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">boolean hasAttr(java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseInput(java.lang.String, java.lang.String)</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.select.Elements#first()">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.nodes.Element first()</data>
+  <data key="direction">down</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#getCharsetFromContentType(java.lang.String)" target="org.jsoup.helper.DataUtil">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.Validate#notEmpty(java.lang.String, java.lang.String)" target="org.jsoup.helper.Validate">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document#outputSettings()" target="org.jsoup.nodes.Document">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document#select(java.lang.String)" target="org.jsoup.nodes.Document">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document$OutputSettings#charset(java.lang.String)" target="org.jsoup.nodes.Document$OutputSettings">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document$OutputSettings#charset(java.lang.String)" target="org.jsoup.nodes.Document$OutputSettings#charset(java.nio.charset.Charset)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document$OutputSettings charset(java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document$OutputSettings charset(java.nio.charset.Charset)</data>
+  <data key="direction">down</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.nodes.Element#attr(java.lang.String)" target="org.jsoup.nodes.Element">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Element#hasAttr(java.lang.String)" target="org.jsoup.nodes.Element">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)" target="org.jsoup.parser.Parser">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)" target="org.jsoup.parser.ParseErrorList#noTracking()">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseInput(java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.parser.ParseErrorList noTracking()</data>
+  <data key="direction">down</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)" target="org.jsoup.parser.ParseErrorList#tracking(int)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseInput(java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.parser.ParseErrorList tracking(int)</data>
+  <data key="direction">down</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)" target="org.jsoup.parser.Parser#isTrackErrors()">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseInput(java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">boolean isTrackErrors()</data>
+  <data key="direction">down</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.parser.Parser#parseInput(java.lang.String, java.lang.String)" target="org.jsoup.parser.TreeBuilder#parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parseInput(java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)</data>
+  <data key="direction">down</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.select.Elements#first()" target="org.jsoup.select.Elements">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document#outputSettings(org.jsoup.nodes.Document$OutputSettings)" target="org.jsoup.nodes.Document">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document#outputSettings(org.jsoup.nodes.Document$OutputSettings)" target="org.jsoup.helper.Validate#notNull(java.lang.Object)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document outputSettings(org.jsoup.nodes.Document$OutputSettings)</data>
+  <data key="callee_signature">void notNull(java.lang.Object)</data>
+  <data key="direction">down</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.helper.Validate#notNull(java.lang.Object)" target="org.jsoup.helper.Validate">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.Document$OutputSettings#charset(java.nio.charset.Charset)" target="org.jsoup.nodes.Document$OutputSettings">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList#noTracking()" target="org.jsoup.parser.ParseErrorList">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList#noTracking()" target="org.jsoup.parser.ParseErrorList#ParseErrorList(int, int)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.parser.ParseErrorList noTracking()</data>
+  <data key="callee_signature">void ParseErrorList(int, int)</data>
+  <data key="direction">down</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList#tracking(int)" target="org.jsoup.parser.ParseErrorList">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList#tracking(int)" target="org.jsoup.parser.ParseErrorList#ParseErrorList(int, int)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.parser.ParseErrorList tracking(int)</data>
+  <data key="callee_signature">void ParseErrorList(int, int)</data>
+  <data key="direction">down</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.parser.Parser#isTrackErrors()" target="org.jsoup.parser.Parser">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder#parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)" target="org.jsoup.parser.TreeBuilder">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder#parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)" target="org.jsoup.parser.TreeBuilder#initialiseParse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)</data>
+  <data key="callee_signature">void initialiseParse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)</data>
+  <data key="direction">down</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder#parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)" target="org.jsoup.parser.TreeBuilder#runParser()">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)</data>
+  <data key="callee_signature">void runParser()</data>
+  <data key="direction">down</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.parser.ParseErrorList#ParseErrorList(int, int)" target="org.jsoup.parser.ParseErrorList">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder#initialiseParse(java.lang.String, java.lang.String, org.jsoup.parser.ParseErrorList)" target="org.jsoup.parser.TreeBuilder">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.TreeBuilder#runParser()" target="org.jsoup.parser.TreeBuilder">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.HttpConnection$Response#parse()" target="org.jsoup.helper.HttpConnection$Response">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.HttpConnection$Response#parse()" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#load(java.io.File, java.lang.String, java.lang.String)" target="org.jsoup.helper.DataUtil">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#load(java.io.File, java.lang.String, java.lang.String)" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document load(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String)" target="org.jsoup.helper.DataUtil">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String)" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document load(java.io.InputStream, java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.helper.DataUtil">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMark()" target="org.jsoup.helper.DataUtilTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMark()" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void discardsSpuriousByteOrderMark()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMarkWhenNoCharsetSet()" target="org.jsoup.helper.DataUtilTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.helper.DataUtilTest#discardsSpuriousByteOrderMarkWhenNoCharsetSet()" target="org.jsoup.helper.DataUtil#parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void discardsSpuriousByteOrderMarkWhenNoCharsetSet()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parseByteData(java.nio.ByteBuffer, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">1</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.File, java.lang.String)" target="org.jsoup.Jsoup">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.File, java.lang.String)" target="org.jsoup.helper.DataUtil#load(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document load(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)" target="org.jsoup.Jsoup">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)" target="org.jsoup.helper.DataUtil#load(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document load(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String)" target="org.jsoup.Jsoup">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String)" target="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse(java.io.InputStream, java.lang.String, java.lang.String)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document load(java.io.InputStream, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.Jsoup">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)" target="org.jsoup.helper.DataUtil#load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">org.jsoup.nodes.Document parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="callee_signature">org.jsoup.nodes.Document load(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">2</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBinary()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBinary()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testBinary()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBaidu()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBaidu()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testBaidu()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBaiduVariant()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBaiduVariant()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testBaiduVariant()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testGoogleSearchIpod()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testGoogleSearchIpod()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testGoogleSearchIpod()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testHtml5Charset()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testHtml5Charset()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testHtml5Charset()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testNewsHomepage()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testNewsHomepage()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testNewsHomepage()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testNytArticle()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testNytArticle()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testNytArticle()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testSmhBizArticle()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testSmhBizArticle()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testSmhBizArticle()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testYahooArticle()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testYahooArticle()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testYahooArticle()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testYahooJp()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testYahooJp()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testYahooJp()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.nodes.DocumentTest#testLocation()" target="org.jsoup.nodes.DocumentTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.nodes.DocumentTest#testLocation()" target="org.jsoup.Jsoup#parse(java.io.File, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testLocation()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.File, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBrokenHtml5CharsetWithASingleDoubleQuote()" target="org.jsoup.integration.ParseTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.integration.ParseTest#testBrokenHtml5CharsetWithASingleDoubleQuote()" target="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testBrokenHtml5CharsetWithASingleDoubleQuote()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.InputStream, java.lang.String, java.lang.String)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+<edge source="org.jsoup.parser.XmlTreeBuilderTest#testSupplyParserToDataStream()" target="org.jsoup.parser.XmlTreeBuilderTest">
+  <data key="relation">belongs_to</data>
+</edge>
+<edge source="org.jsoup.parser.XmlTreeBuilderTest#testSupplyParserToDataStream()" target="org.jsoup.Jsoup#parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)">
+  <data key="relation">calls</data>
+  <data key="caller_signature">void testSupplyParserToDataStream()</data>
+  <data key="callee_signature">org.jsoup.nodes.Document parse(java.io.InputStream, java.lang.String, java.lang.String, org.jsoup.parser.Parser)</data>
+  <data key="direction">up</data>
+  <data key="depth">3</data>
+</edge>
+</graph></graphml>

@@ -1,0 +1,67 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CSR RQ Suite",
+      "type": "python",
+      "request": "launch",
+      "module": "csr_agent",
+      "python": "D:/AsmellRefactor/CSR-Agent/.conda/envs/csr-agent/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "src"
+      },
+      "args": [
+        "run-rq-suite",
+        "--config", "configs/pipeline_config.local.yaml",
+        "--contracts", "configs/agent_contracts.yaml",
+        "--matrix", "configs/rq_suite.local.yaml",
+        "--dataset-dir", "D:/AsmellRefactor/MyCode/ACSmellData",
+        "--suite-id", "debug_rq_suite"
+      ]
+    },
+    {
+      "name": "CSR Single CSV Experiment",
+      "type": "python",
+      "request": "launch",
+      "module": "csr_agent",
+      "python": "D:/AsmellRefactor/CSR-Agent/.conda/envs/csr-agent/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "src"
+      },
+      "args": [
+        "run-experiment",
+        "--config", "configs/pipeline_config.local.yaml",
+        "--contracts", "configs/agent_contracts.yaml",
+        "--dataset-csv", "D:/AsmellRefactor/MyCode/ACSmellData/jsoup.csv",
+        "--experiment-id", "debug_single_csv"
+      ]
+    },
+    {
+      "name": "CSR Single Task JSON",
+      "type": "python",
+      "request": "launch",
+      "module": "csr_agent",
+      "python": "D:/AsmellRefactor/CSR-Agent/.conda/envs/csr-agent/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "src"
+      },
+      "args": [
+        "run-task",
+        "--config", "configs/pipeline_config.local.yaml",
+        "--task-json", ".tmp_smoke_task.json"
+      ]
+    }
+  ]
+}

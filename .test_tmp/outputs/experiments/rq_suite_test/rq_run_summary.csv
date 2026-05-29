@@ -1,0 +1,5 @@
+rq,method,profile,experiment_id,total_tasks,accepted_tasks,failed_tasks,mean_srr,mean_csr,mean_binary_sir,mean_count_sir,mean_token_cost,mean_time_cost
+rq1,m1,,rq_suite_test_rq1_m1,2,2,0,1.0,1.0,0.0,0.0,0.0,0.06558539997786283
+rq2,m2,,rq_suite_test_rq2_m2,2,2,0,1.0,1.0,0.0,0.0,0.0,0.08193649997701868
+rq3,m3,,rq_suite_test_rq3_m3,2,2,0,1.0,1.0,0.0,0.0,0.0,0.07011739996960387
+rq4,m4,,rq_suite_test_rq4_m4,2,2,0,1.0,1.0,0.0,0.0,0.0,0.07232704997295514

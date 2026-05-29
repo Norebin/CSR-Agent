@@ -1,0 +1,32 @@
+{
+  "task_id": "smoke_jsoup_1",
+  "dataset_split": "test",
+  "project": "jsoup",
+  "version": {
+    "version_hint": "1.0",
+    "begin_tag": null,
+    "end_tag": null,
+    "disappear_tag": null,
+    "resolved_begin_tag": null,
+    "resolved_disappear_tag": null
+  },
+  "location": {
+    "package_name": "org.jsoup",
+    "type_name": "Jsoup",
+    "method_name": "parse",
+    "file_path": "src/main/java/org/jsoup/Jsoup.java"
+  },
+  "file_path": "src/main/java/org/jsoup/Jsoup.java",
+  "smell_type": "LongMethod",
+  "smell_metadata": {},
+  "context": {
+    "raw_code": "public class Jsoup { public static void parse(){ if(true){ } } }",
+    "comment": null,
+    "diff": null,
+    "commit_history": null,
+    "refactorings": null,
+    "graph_context_path": null,
+    "graph_available": true
+  },
+  "expected_outputs": []
+}

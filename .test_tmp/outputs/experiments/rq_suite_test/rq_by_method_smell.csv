@@ -1,0 +1,9 @@
+rq,method,smell_type,srr,csr,binary_sir,count_sir,assertion_pass_rate,token_cost,time_cost,loop_count
+rq1,m1,FeatureEnvy,1.0,1.0,0.0,0.0,,0.0,0.06743339996319264,1.0
+rq1,m1,LongMethod,1.0,1.0,0.0,0.0,,0.0,0.06373739999253303,1.0
+rq2,m2,FeatureEnvy,1.0,1.0,0.0,0.0,,0.0,0.08492449996992946,1.0
+rq2,m2,LongMethod,1.0,1.0,0.0,0.0,,0.0,0.07894849998410791,1.0
+rq3,m3,FeatureEnvy,1.0,1.0,0.0,0.0,,0.0,0.06650409998837858,1.0
+rq3,m3,LongMethod,1.0,1.0,0.0,0.0,,0.0,0.07373069995082915,1.0
+rq4,m4,FeatureEnvy,1.0,1.0,0.0,0.0,,0.0,0.06901039998047054,1.0
+rq4,m4,LongMethod,1.0,1.0,0.0,0.0,,0.0,0.07564369996543974,1.0

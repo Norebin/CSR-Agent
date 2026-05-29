@@ -1,0 +1,5 @@
+rq,method,smell_type,assertion_pass_rate
+rq1,m1,LongMethod,
+rq2,m2,LongMethod,
+rq3,m3,LongMethod,
+rq4,m4,LongMethod,

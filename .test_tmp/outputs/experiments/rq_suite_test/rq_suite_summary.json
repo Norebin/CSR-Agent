@@ -1,0 +1,33 @@
+{
+  "suite_id": "rq_suite_test",
+  "runs": [
+    {
+      "rq": "rq1",
+      "method": "m1",
+      "profile": null,
+      "experiment_id": "rq_suite_test_rq1_m1",
+      "artifacts_root": ".test_tmp\\outputs\\experiments\\rq_suite_test_rq1_m1"
+    },
+    {
+      "rq": "rq2",
+      "method": "m2",
+      "profile": null,
+      "experiment_id": "rq_suite_test_rq2_m2",
+      "artifacts_root": ".test_tmp\\outputs\\experiments\\rq_suite_test_rq2_m2"
+    },
+    {
+      "rq": "rq3",
+      "method": "m3",
+      "profile": null,
+      "experiment_id": "rq_suite_test_rq3_m3",
+      "artifacts_root": ".test_tmp\\outputs\\experiments\\rq_suite_test_rq3_m3"
+    },
+    {
+      "rq": "rq4",
+      "method": "m4",
+      "profile": null,
+      "experiment_id": "rq_suite_test_rq4_m4",
+      "artifacts_root": ".test_tmp\\outputs\\experiments\\rq_suite_test_rq4_m4"
+    }
+  ]
+}

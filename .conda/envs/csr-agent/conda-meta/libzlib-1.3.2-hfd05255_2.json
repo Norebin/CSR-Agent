@@ -1,0 +1,56 @@
+{
+  "name": "libzlib",
+  "version": "1.3.2",
+  "build": "hfd05255_2",
+  "build_number": 2,
+  "channel": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/win-64",
+  "subdir": "win-64",
+  "fn": "libzlib-1.3.2-hfd05255_2.conda",
+  "md5": "dbabbd6234dea34040e631f87676292f",
+  "url": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/win-64/libzlib-1.3.2-hfd05255_2.conda",
+  "sha256": "88609816e0cc7452bac637aaf65783e5edf4fee8a9f8e22bdc3a75882c536061",
+  "depends": [
+    "ucrt >=10.0.20348.0",
+    "vc >=14.3,<15",
+    "vc14_runtime >=14.44.35208"
+  ],
+  "constrains": [
+    "zlib 1.3.2 *_2"
+  ],
+  "track_features": "",
+  "features": "",
+  "license": "Zlib",
+  "license_family": "Other",
+  "timestamp": 1774072851498,
+  "size": 58347,
+  "requested_spec": "None",
+  "package_tarball_full_path": "D:\\Software\\Coding\\Miniconda3\\pkgs\\libzlib-1.3.2-hfd05255_2.conda",
+  "extracted_package_dir": "D:\\Software\\Coding\\Miniconda3\\pkgs\\libzlib-1.3.2-hfd05255_2",
+  "files": [
+    "Library/bin/zlib.dll",
+    "zlib.dll"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "Library/bin/zlib.dll",
+        "path_type": "hardlink",
+        "sha256": "85c711c83f96bed93184bede15be6b5a3e5444df09dfffef00564107189dc722",
+        "size_in_bytes": 90624,
+        "sha256_in_prefix": "85c711c83f96bed93184bede15be6b5a3e5444df09dfffef00564107189dc722"
+      },
+      {
+        "_path": "zlib.dll",
+        "path_type": "hardlink",
+        "sha256": "85c711c83f96bed93184bede15be6b5a3e5444df09dfffef00564107189dc722",
+        "size_in_bytes": 90624,
+        "sha256_in_prefix": "85c711c83f96bed93184bede15be6b5a3e5444df09dfffef00564107189dc722"
+      }
+    ]
+  },
+  "link": {
+    "source": "D:\\Software\\Coding\\Miniconda3\\pkgs\\libzlib-1.3.2-hfd05255_2",
+    "type": 1
+  }
+}

@@ -1,0 +1,3 @@
+task_id,project,smell_type,accepted,final_state,srr,csr,binary_sir,count_sir,assertion_pass_rate,token_cost,time_cost
+rq_suite_lm,demo,LongMethod,True,accepted,1.0,1.0,0.0,0.0,,0.0,0.07373069995082915
+rq_suite_fe,demo,FeatureEnvy,True,accepted,1.0,1.0,0.0,0.0,,0.0,0.06650409998837858

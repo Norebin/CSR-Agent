@@ -1,0 +1,9 @@
+{
+  "task_id": "rq_suite_lm",
+  "retrieval_mode": "no_store",
+  "graph_available": true,
+  "items": [],
+  "notes": [
+    "semantic store missing; skip retrieval"
+  ]
+}

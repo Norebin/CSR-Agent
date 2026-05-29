@@ -1,0 +1,9 @@
+{
+  "task_id": "long_method_1",
+  "retrieval_mode": "no_store",
+  "graph_available": true,
+  "items": [],
+  "notes": [
+    "semantic store missing; skip retrieval"
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "task_id": "graph_missing",
+  "project": "demo",
+  "smell_type": "LongMethod",
+  "final_state": "accepted",
+  "accepted": true,
+  "loop_count": 1,
+  "evidence_pack": {
+    "task_id": "graph_missing",
+    "retrieval_mode": "semantic_plus_context_plus_refactor_prior",
+    "graph_available": false,
+    "items": [
+      {
+        "case_id": "case_train_case",
+        "source_project": "demo",
+        "smell_type": "LongMethod",
+        "score": 0.56312964034803,
+        "semantic_score": 0.9101821184158325,
+        "structure_score": 0.2,
+        "refactor_prior_score": 0.1,
+        "payload": {
+          "context_summary": {
+            "file_path": "src/DemoClass.java",
+            "graph_available": true
+          },
+          "refactor_action_sequence": [],
+          "bm25_score": 1.0,
+          "mode": "semantic_plus_context_plus_refactor_prior"
+        }
+      }
+    ],
+    "notes": [
+      "context_missing.graph=true; weights renormalized",
+      "retrieval_mode=semantic_plus_context_plus_refactor_prior"
+    ]
+  },
+  "plan": {
+    "task_summary": "Refactor LongMethod for demo:graph_missing",
+    "smell_diagnosis": "Evidence count=1",
+    "risk_assessment": "graph_context_missing",
+    "selected_agents": [
+      "method_refactorer",
+      "class_harmonizer",
+      "reviewer_verifier"
+    ],
+    "execution_order": [
+      "planner_orchestrator",
+      "method_refactorer",
+      "class_harmonizer",
+      "reviewer_verifier"
+    ],
+    "required_tools": [
+      "entity_tracker_tool",
+      "retrieval_tool",
+      "repo_browser_tool"
+    ],
+    "stop_conditions": [
+      "accepted_by_reviewer",
+      "max_review_loops_reached",
+      "unrecoverable_entity_resolution_failure"
+    ],
+    "acceptance_criteria": [
+      "compile_pass",
+      "target_smell_removed",
+      "no_high_risk_new_smells"
+    ],
+    "nodes": [
+      {
+        "node_id": "retrieve_evidence",
+        "kind": "service",
+        "description": "Collect retrieval evidence pack",
+        "required_tools": [
+          "retrieval_tool"
+        ],
+        "metadata": {}
+      },
+      {
+        "node_id": "refactor_main",
+        "kind": "agent",
+        "description": "Primary refactor path for LongMethod",
+        "required_tools": [
+          "ast_tool",
+          "patch_tool"
+        ],
+        "metadata": {}
+      },
+      {
+        "node_id": "review_decision",
+        "kind": "agent",
+        "description": "Review and decide accept/retry/fail",
+        "required_tools": [
+          "repo_browser_tool"
+        ],
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "retrieve_evidence",
+        "target": "refactor_main",
+        "edge_type": "serial"
+      },
+      {
+        "source": "refactor_main",
+        "target": "review_decision",
+        "edge_type": "serial"
+      }
+    ]
+  },
+  "patch_bundle": {
+    "task_id": "graph_missing",
+    "merged_diff": "--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// TODO: compute original implementation\n+// Refactored compute using low-risk intra-method transformations\n--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// TODO: cleanup imports\n+// Harmonized naming/import cleanup after refactoring",
+    "proposals": [
+      {
+        "agent_name": "method_refactorer",
+        "proposed_refactor_actions": [
+          "Extract Method",
+          "Decompose Conditional",
+          "Guard Clause"
+        ],
+        "unified_diff": "--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// TODO: compute original implementation\n+// Refactored compute using low-risk intra-method transformations\n",
+        "rationale": "Prioritize behavior-preserving intra-method refactoring.",
+        "expected_smell_effect": "Reduce LongMethod intensity.",
+        "possible_side_effects": [
+          "Potential over-extraction if context is sparse."
+        ],
+        "metadata": {
+          "skill_cards_used": 0
+        }
+      },
+      {
+        "agent_name": "class_harmonizer",
+        "proposed_refactor_actions": [
+          "Cleanup Unused Imports",
+          "Normalize Local Naming",
+          "Adjust Visibility"
+        ],
+        "unified_diff": "--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// TODO: cleanup imports\n+// Harmonized naming/import cleanup after refactoring\n",
+        "rationale": "Low-risk structural cleanup only; no business logic rewrite.",
+        "expected_smell_effect": "Stabilize patch and reduce integration risks.",
+        "possible_side_effects": [],
+        "metadata": {
+          "cleanup_scope": "class-level"
+        }
+      }
+    ],
+    "conflicts": [
+      "Potential conflict on src/DemoClass.java"
+    ]
+  },
+  "review_feedback": {
+    "task_id": "graph_missing",
+    "decision": "accept",
+    "failure_stage": "review",
+    "symptom": "All checks passed.",
+    "location": {
+      "file_path": "src/DemoClass.java",
+      "class_name": "DemoClass",
+      "method_name": "compute",
+      "line_span": null
+    },
+    "risk_level": "low",
+    "suggested_fix": "",
+    "should_retry": false,
+    "recommended_agent": "method_refactorer",
+    "forbidden_actions_next_round": [],
+    "tool_observations": [
+      {
+        "tool_name": "patch_tool",
+        "operation": "apply_patch",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing; logical apply only.",
+        "artifacts": {
+          "applied": false,
+          "check_pass": true
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      },
+      {
+        "tool_name": "ast_tool",
+        "operation": "parse_java",
+        "status": "ok",
+        "error_code": null,
+        "message": "Heuristic parse success.",
+        "artifacts": {
+          "parsed": true,
+          "engine": "heuristic"
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_module",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_project",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      }
+    ]
+  },
+  "validation": {
+    "task_id": "graph_missing",
+    "parser_pass": true,
+    "module_compile_pass": true,
+    "project_compile_pass": true,
+    "targeted_tests_pass": null,
+    "generated_assertions_pass": null,
+    "target_smell_removed": true,
+    "newly_introduced_smells": [],
+    "observations": [
+      {
+        "tool_name": "patch_tool",
+        "operation": "apply_patch",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing; logical apply only.",
+        "artifacts": {
+          "applied": false,
+          "check_pass": true
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      },
+      {
+        "tool_name": "ast_tool",
+        "operation": "parse_java",
+        "status": "ok",
+        "error_code": null,
+        "message": "Heuristic parse success.",
+        "artifacts": {
+          "parsed": true,
+          "engine": "heuristic"
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_module",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_project",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:28.039991+00:00"
+      }
+    ]
+  },
+  "metrics": {
+    "task_id": "graph_missing",
+    "smell_type": "LongMethod",
+    "srr": 1.0,
+    "csr": 1.0,
+    "binary_sir": 0.0,
+    "count_sir": 0.0,
+    "assertion_pass_rate": null,
+    "token_cost": 0.0,
+    "time_cost": 0.07830980001017451,
+    "codebleu": 0.0,
+    "loop_count": 1,
+    "extra": {
+      "llm_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    }
+  },
+  "warnings": [
+    "Version resolution uncertainty is high.",
+    "Graph context missing or unresolved."
+  ]
+}

@@ -1,0 +1,117 @@
+rq1:
+  description: Compare CSR-Agent against baseline LLM methods by SRR/CSR/SIR.
+  methods:
+  - name: csr-agent
+    profile: null
+    overrides: {}
+  - name: gpt-5.2
+    profile: null
+    overrides:
+      llm_api.enabled: true
+      llm_api.base_url: https://api.chatanywhere.tech/v1
+      llm_api.api_key_env: OPENAI_API_KEY
+      models.planner_model: gpt-5.2
+      models.executor_model: gpt-5.2
+      models.reviewer_model: gpt-5.2
+  - name: gemini-2.5-pro
+    profile: null
+    overrides:
+      llm_api.enabled: true
+      llm_api.base_url: https://generativelanguage.googleapis.com/v1beta/openai
+      llm_api.api_key_env: GEMINI_API_KEY
+      models.planner_model: gemini-2.5-pro
+      models.executor_model: gemini-2.5-pro
+      models.reviewer_model: gemini-2.5-pro
+  - name: deepseek-v3.2
+    profile: null
+    overrides:
+      llm_api.enabled: true
+      llm_api.base_url: https://api.deepseek.com/v1
+      llm_api.api_key_env: DEEPSEEK_API_KEY
+      models.planner_model: deepseek-v3.2
+      models.executor_model: deepseek-v3.2
+      models.reviewer_model: deepseek-v3.2
+
+rq2:
+  description: Retrieval ablation and mainstream retrieval variants.
+  methods:
+  - name: rag_hybrid
+    profile: rq2_hybrid_default
+    overrides: {}
+  - name: rag_semantic_only
+    profile: rq2_semantic_only
+    overrides: {}
+  - name: rag_context_only
+    profile: rq2_context_only
+    overrides: {}
+  - name: rag_bm25_like
+    profile: rq2_bm25_like
+    overrides: {}
+  - name: rag_rrf_dense_bm25
+    profile: rq2_rrf_dense_bm25
+    overrides: {}
+  - name: rag_off
+    profile: rq2_no_rag
+    overrides: {}
+
+rq3:
+  description: Multi-agent/prompt/memory/tool ablations.
+  methods:
+  - name: full_multi_agent
+    profile: rq3_few_shot
+    overrides: {}
+  - name: no_planner
+    profile: rq3_no_planner
+    overrides: {}
+  - name: no_method_refactorer
+    profile: rq3_no_method_agent
+    overrides: {}
+  - name: no_move_refactorer
+    profile: rq3_no_move_agent
+    overrides: {}
+  - name: no_class_harmonizer
+    profile: rq3_no_harmonizer
+    overrides: {}
+  - name: no_reviewer
+    profile: rq3_no_reviewer
+    overrides: {}
+  - name: one_shot
+    profile: rq3_one_shot
+    overrides: {}
+  - name: no_cot
+    profile: rq3_no_cot
+    overrides: {}
+  - name: react
+    profile: rq3_react
+    overrides: {}
+  - name: tot
+    profile: rq3_tot
+    overrides: {}
+  - name: no_tools
+    profile: rq3_no_tools
+    overrides: {}
+  - name: no_rag_memory
+    profile: rq2_no_rag
+    overrides: {}
+  - name: no_skill_memory
+    profile: rq3_no_skills
+    overrides: {}
+  - name: no_episode_memory
+    profile: rq3_no_episode_memory
+    overrides: {}
+
+rq4:
+  description: Review-loop efficiency/effectiveness tradeoff.
+  methods:
+  - name: loop_1
+    profile: rq4_loop_1
+    overrides: {}
+  - name: loop_2
+    profile: rq4_loop_2
+    overrides: {}
+  - name: loop_3_default
+    profile: null
+    overrides: {}
+  - name: loop_4
+    profile: rq4_loop_4
+    overrides: {}

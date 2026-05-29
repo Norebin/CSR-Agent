@@ -1,0 +1,15 @@
+name: csr-agent
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - pydantic==2.11.3
+      - PyYAML==6.0.2
+      - jsonschema==4.23.0
+      - numpy==1.26.4
+      - pandas==2.2.3
+      - faiss-cpu==1.11.0.post1
+      - pytest==8.3.5

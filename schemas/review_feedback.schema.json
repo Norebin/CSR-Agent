@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReviewFeedback",
+  "type": "object",
+  "required": [
+    "task_id",
+    "decision",
+    "failure_stage",
+    "symptom",
+    "risk_level",
+    "should_retry"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "accept",
+        "retry",
+        "fail"
+      ]
+    },
+    "failure_stage": {
+      "type": "string",
+      "enum": [
+        "entity_location",
+        "retrieval",
+        "patch_generation",
+        "patch_merge",
+        "static_validation",
+        "dynamic_validation",
+        "smell_redetect",
+        "review"
+      ]
+    },
+    "symptom": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "class_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line_span": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "suggested_fix": {
+      "type": "string"
+    },
+    "should_retry": {
+      "type": "boolean"
+    },
+    "recommended_agent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "forbidden_actions_next_round": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tool_observations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

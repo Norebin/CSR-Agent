@@ -1,0 +1,98 @@
+{
+  "task_id": "jsoup_14",
+  "decision": "fail",
+  "failure_stage": "patch_merge",
+  "symptom": "Patch application failed due to corrupt patch at line 119, preventing further validation and integration.",
+  "location": {
+    "file_path": "src/main/java/org/jsoup/helper/DataUtil.java",
+    "class_name": null,
+    "method_name": null,
+    "line_span": null
+  },
+  "risk_level": "high",
+  "suggested_fix": "Fix the patch formatting and integrity issues to ensure it applies cleanly. Verify patch correctness before resubmission.",
+  "should_retry": false,
+  "recommended_agent": null,
+  "forbidden_actions_next_round": [
+    "accept",
+    "retry"
+  ],
+  "tool_observations": [
+    {
+      "tool_name": "patch_tool",
+      "operation": "apply_patch",
+      "status": "error",
+      "error_code": "PATCH_CHECK_FAILED",
+      "message": "git apply --check failed due to corrupt patch at line 119.",
+      "artifacts": {
+        "applied": false,
+        "check_pass": false,
+        "stderr": "error: corrupt patch at line 119\n",
+        "returncode": 128
+      },
+      "timestamp": "2026-04-15T16:03:31.481672+00:00"
+    },
+    {
+      "tool_name": "ast_tool",
+      "operation": "parse_java",
+      "status": "degraded",
+      "error_code": null,
+      "message": "Heuristic parse failed.",
+      "artifacts": {
+        "parsed": false,
+        "engine": "heuristic"
+      },
+      "timestamp": "2026-04-15T16:03:31.482190+00:00"
+    },
+    {
+      "tool_name": "build_tool",
+      "operation": "compile_module",
+      "status": "ok",
+      "error_code": null,
+      "message": "Compile executed.",
+      "artifacts": {
+        "passed": true,
+        "executed": true,
+        "build_system": "maven",
+        "command": [
+          "D:/Software/IntelliJ IDEA 2025.2.2/plugins/maven/lib/maven3/bin/mvn.cmd",
+          "-s",
+          "D:/AsmellRefactor/CSR-Agent/.m2/settings.xml",
+          "-Dmaven.repo.local=D:/AsmellRefactor/CSR-Agent/.m2/repository",
+          "-q",
+          "-DskipTests",
+          "compile"
+        ],
+        "stdout_tail": "",
+        "stderr_tail": "",
+        "returncode": 0
+      },
+      "timestamp": "2026-04-15T16:03:35.625975+00:00"
+    },
+    {
+      "tool_name": "build_tool",
+      "operation": "compile_project",
+      "status": "ok",
+      "error_code": null,
+      "message": "Compile executed.",
+      "artifacts": {
+        "passed": true,
+        "executed": true,
+        "build_system": "maven",
+        "command": [
+          "D:/Software/IntelliJ IDEA 2025.2.2/plugins/maven/lib/maven3/bin/mvn.cmd",
+          "-s",
+          "D:/AsmellRefactor/CSR-Agent/.m2/settings.xml",
+          "-Dmaven.repo.local=D:/AsmellRefactor/CSR-Agent/.m2/repository",
+          "-q",
+          "-DskipTests",
+          "compile"
+        ],
+        "stdout_tail": "",
+        "stderr_tail": "",
+        "returncode": 0
+      },
+      "timestamp": "2026-04-15T16:03:39.553425+00:00"
+    }
+  ]
+}

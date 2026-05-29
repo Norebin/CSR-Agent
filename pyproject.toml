@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csr-agent"
+version = "0.1.0"
+description = "Research-oriented pluggable multi-agent code smell refactoring system"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "CSR-Agent Team" }
+]
+dependencies = [
+  "pydantic>=2.11,<3",
+  "PyYAML>=6.0,<7",
+  "jsonschema>=4.23,<5",
+  "numpy>=1.26,<2",
+  "pandas>=2.2,<3",
+  "faiss-cpu>=1.11,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+]
+
+[project.scripts]
+csr-agent = "csr_agent.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

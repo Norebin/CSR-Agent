@@ -1,0 +1,168 @@
+{
+  "task_summary": "Refactor the LongMethod smell in method parseByteData of class org.jsoup.helper.DataUtil by applying method extraction and related refactorings to improve readability and maintainability.",
+  "smell_diagnosis": "The method parseByteData in DataUtil.java is identified as a LongMethod smell, indicating it is too long and complex, making it hard to understand and maintain.",
+  "risk_assessment": "Refactoring a long method by extracting smaller methods reduces complexity and risk of errors. However, care must be taken to preserve behavior and handle exceptions properly.",
+  "selected_agents": [
+    "method_refactorer"
+  ],
+  "execution_order": [
+    "extract_detectCharset",
+    "extract_maybeSkipBom",
+    "extract_parseInputStream",
+    "remove_variable_annotations",
+    "add_variable_modifiers",
+    "rename_variables",
+    "merge_conditionals"
+  ],
+  "required_tools": [
+    "java_parser",
+    "refactoring_tool"
+  ],
+  "stop_conditions": [
+    "LongMethod smell in parseByteData is resolved",
+    "No compilation errors after refactoring",
+    "All extracted methods are properly tested"
+  ],
+  "acceptance_criteria": [
+    "Method parseByteData is decomposed into smaller methods",
+    "Code readability and maintainability are improved",
+    "Behavior of parseByteData remains unchanged",
+    "No new warnings or errors introduced"
+  ],
+  "nodes": [
+    {
+      "node_id": "extract_detectCharset",
+      "kind": "refactoring",
+      "description": "Extract method detectCharset from parseByteData to isolate charset detection logic.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "method_name": "detectCharset",
+        "extracted_from": "parseByteData"
+      }
+    },
+    {
+      "node_id": "extract_maybeSkipBom",
+      "kind": "refactoring",
+      "description": "Extract method maybeSkipBom from parseByteData to handle BOM skipping logic.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "method_name": "maybeSkipBom",
+        "extracted_from": "parseByteData"
+      }
+    },
+    {
+      "node_id": "extract_parseInputStream",
+      "kind": "refactoring",
+      "description": "Extract method parseInputStream from parseByteData to separate input stream parsing logic.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "method_name": "parseInputStream",
+        "extracted_from": "parseByteData"
+      }
+    },
+    {
+      "node_id": "remove_variable_annotations",
+      "kind": "refactoring",
+      "description": "Remove unnecessary @Nullable annotations from variables in parseByteData and extracted methods.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "annotations_removed": [
+          "@Nullable"
+        ]
+      }
+    },
+    {
+      "node_id": "add_variable_modifiers",
+      "kind": "refactoring",
+      "description": "Add final modifiers to variables in parseByteData and extracted methods to improve immutability.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "modifiers_added": [
+          "final"
+        ]
+      }
+    },
+    {
+      "node_id": "rename_variables",
+      "kind": "refactoring",
+      "description": "Rename variables in parseByteData and extracted methods for clarity and consistency.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "variables_renamed": [
+          {
+            "from": "prolog",
+            "to": "decl"
+          },
+          {
+            "from": "docData",
+            "to": "defaultDecoded"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "merge_conditionals",
+      "kind": "refactoring",
+      "description": "Merge nested conditionals in parseByteData to simplify control flow.",
+      "required_tools": [
+        "java_parser",
+        "refactoring_tool"
+      ],
+      "metadata": {
+        "merged_conditionals": [
+          "if(decl != null && decl.name().equalsIgnoreCase(\"xml\"))"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "extract_detectCharset",
+      "target": "extract_maybeSkipBom",
+      "edge_type": "serial"
+    },
+    {
+      "source": "extract_maybeSkipBom",
+      "target": "extract_parseInputStream",
+      "edge_type": "serial"
+    },
+    {
+      "source": "extract_parseInputStream",
+      "target": "remove_variable_annotations",
+      "edge_type": "serial"
+    },
+    {
+      "source": "remove_variable_annotations",
+      "target": "add_variable_modifiers",
+      "edge_type": "serial"
+    },
+    {
+      "source": "add_variable_modifiers",
+      "target": "rename_variables",
+      "edge_type": "serial"
+    },
+    {
+      "source": "rename_variables",
+      "target": "merge_conditionals",
+      "edge_type": "serial"
+    }
+  ]
+}

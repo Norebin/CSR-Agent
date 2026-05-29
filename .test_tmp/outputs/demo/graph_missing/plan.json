@@ -1,0 +1,73 @@
+{
+  "task_summary": "Refactor LongMethod for demo:graph_missing",
+  "smell_diagnosis": "Evidence count=1",
+  "risk_assessment": "graph_context_missing",
+  "selected_agents": [
+    "method_refactorer",
+    "class_harmonizer",
+    "reviewer_verifier"
+  ],
+  "execution_order": [
+    "planner_orchestrator",
+    "method_refactorer",
+    "class_harmonizer",
+    "reviewer_verifier"
+  ],
+  "required_tools": [
+    "entity_tracker_tool",
+    "retrieval_tool",
+    "repo_browser_tool"
+  ],
+  "stop_conditions": [
+    "accepted_by_reviewer",
+    "max_review_loops_reached",
+    "unrecoverable_entity_resolution_failure"
+  ],
+  "acceptance_criteria": [
+    "compile_pass",
+    "target_smell_removed",
+    "no_high_risk_new_smells"
+  ],
+  "nodes": [
+    {
+      "node_id": "retrieve_evidence",
+      "kind": "service",
+      "description": "Collect retrieval evidence pack",
+      "required_tools": [
+        "retrieval_tool"
+      ],
+      "metadata": {}
+    },
+    {
+      "node_id": "refactor_main",
+      "kind": "agent",
+      "description": "Primary refactor path for LongMethod",
+      "required_tools": [
+        "ast_tool",
+        "patch_tool"
+      ],
+      "metadata": {}
+    },
+    {
+      "node_id": "review_decision",
+      "kind": "agent",
+      "description": "Review and decide accept/retry/fail",
+      "required_tools": [
+        "repo_browser_tool"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "retrieve_evidence",
+      "target": "refactor_main",
+      "edge_type": "serial"
+    },
+    {
+      "source": "refactor_main",
+      "target": "review_decision",
+      "edge_type": "serial"
+    }
+  ]
+}

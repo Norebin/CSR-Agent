@@ -1,0 +1,159 @@
+{
+  "name": "et_xmlfile",
+  "version": "2.0.0",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "et_xmlfile-2.0.0-pyhd8ed1ab_1.conda",
+  "md5": "71bf9646cbfabf3022c8da4b6b4da737",
+  "url": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/et_xmlfile-2.0.0-pyhd8ed1ab_1.conda",
+  "sha256": "2209534fbf2f70c20661ff31f57ab6a97b82ee98812e8a2dcb2b36a0d345727c",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "track_features": "",
+  "features": "",
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1733749746000,
+  "size": 21908,
+  "requested_spec": "None",
+  "package_tarball_full_path": "D:\\Software\\Coding\\Miniconda3\\pkgs\\et_xmlfile-2.0.0-pyhd8ed1ab_1.conda",
+  "extracted_package_dir": "D:\\Software\\Coding\\Miniconda3\\pkgs\\et_xmlfile-2.0.0-pyhd8ed1ab_1",
+  "files": [
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/AUTHORS.txt",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/INSTALLER",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/LICENCE.python",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/LICENCE.rst",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/METADATA",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/RECORD",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/REQUESTED",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/WHEEL",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/direct_url.json",
+    "Lib/site-packages/et_xmlfile-2.0.0.dist-info/top_level.txt",
+    "Lib/site-packages/et_xmlfile/__init__.py",
+    "Lib/site-packages/et_xmlfile/incremental_tree.py",
+    "Lib/site-packages/et_xmlfile/xmlfile.py",
+    "Lib/site-packages/et_xmlfile/__pycache__/__init__.cpython-311.pyc",
+    "Lib/site-packages/et_xmlfile/__pycache__/incremental_tree.cpython-311.pyc",
+    "Lib/site-packages/et_xmlfile/__pycache__/xmlfile.cpython-311.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/AUTHORS.txt",
+        "path_type": "hardlink",
+        "sha256": "7f038029ea5463605dd2278d300099a381bce9e90dda83ccab2042346b6c8107",
+        "size_in_bytes": 82,
+        "sha256_in_prefix": "7f038029ea5463605dd2278d300099a381bce9e90dda83ccab2042346b6c8107"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/LICENCE.python",
+        "path_type": "hardlink",
+        "sha256": "4ccdaaebc0f44b83720ec0399bb7ab329adce067dd62f73c5535a2dc05628ab2",
+        "size_in_bytes": 14688,
+        "sha256_in_prefix": "4ccdaaebc0f44b83720ec0399bb7ab329adce067dd62f73c5535a2dc05628ab2"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/LICENCE.rst",
+        "path_type": "hardlink",
+        "sha256": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
+        "size_in_bytes": 1131,
+        "sha256_in_prefix": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "0e97d7ea909ed0fbe03d88bc8b6f58677cee1b07bd3353ce361cd2405915204e",
+        "size_in_bytes": 2711,
+        "sha256_in_prefix": "0e97d7ea909ed0fbe03d88bc8b6f58677cee1b07bd3353ce361cd2405915204e"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "16eed767173d287ce759802dd3a2033ddd0ace768a81dd8984b8645eea2eef91",
+        "size_in_bytes": 1289,
+        "sha256_in_prefix": "16eed767173d287ce759802dd3a2033ddd0ace768a81dd8984b8645eea2eef91"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "3d9504c5d7fbd548bfb28ebb417a724ae1ed0a2dfe277c2f1783912ba93f4bc5",
+        "size_in_bytes": 91,
+        "sha256_in_prefix": "3d9504c5d7fbd548bfb28ebb417a724ae1ed0a2dfe277c2f1783912ba93f4bc5"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "dc78d6cf3843ac693fe942a9c8aa549978945c38f6d798cbefbb5030afc13d9f",
+        "size_in_bytes": 106,
+        "sha256_in_prefix": "dc78d6cf3843ac693fe942a9c8aa549978945c38f6d798cbefbb5030afc13d9f"
+      },
+      {
+        "_path": "site-packages/et_xmlfile-2.0.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "df8fbbe1de4d3404604ec3f108cb5ae68dbc5e904d992374882661b66c76164f",
+        "size_in_bytes": 11,
+        "sha256_in_prefix": "df8fbbe1de4d3404604ec3f108cb5ae68dbc5e904d992374882661b66c76164f"
+      },
+      {
+        "_path": "site-packages/et_xmlfile/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "010e3fd9c354132507947a3e63719debef12ffa7b229de798d83b87a1db7507c",
+        "size_in_bytes": 228,
+        "sha256_in_prefix": "010e3fd9c354132507947a3e63719debef12ffa7b229de798d83b87a1db7507c"
+      },
+      {
+        "_path": "site-packages/et_xmlfile/incremental_tree.py",
+        "path_type": "hardlink",
+        "sha256": "957e154ad7f350d2b48edad5b2fb213c436eec4ff3422ae0964c91b73183c048",
+        "size_in_bytes": 34534,
+        "sha256_in_prefix": "957e154ad7f350d2b48edad5b2fb213c436eec4ff3422ae0964c91b73183c048"
+      },
+      {
+        "_path": "site-packages/et_xmlfile/xmlfile.py",
+        "path_type": "hardlink",
+        "sha256": "e9077106ad8fd027f7e51fa8c978cb979c0e22d7c9278632e8094817d457ec18",
+        "size_in_bytes": 4886,
+        "sha256_in_prefix": "e9077106ad8fd027f7e51fa8c978cb979c0e22d7c9278632e8094817d457ec18"
+      },
+      {
+        "_path": "Lib/site-packages/et_xmlfile/__pycache__/__init__.cpython-311.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 415
+      },
+      {
+        "_path": "Lib/site-packages/et_xmlfile/__pycache__/incremental_tree.cpython-311.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 27821
+      },
+      {
+        "_path": "Lib/site-packages/et_xmlfile/__pycache__/xmlfile.cpython-311.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5892
+      }
+    ]
+  },
+  "link": {
+    "source": "D:\\Software\\Coding\\Miniconda3\\pkgs\\et_xmlfile-2.0.0-pyhd8ed1ab_1",
+    "type": 1
+  }
+}

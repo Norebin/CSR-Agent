@@ -1,0 +1,29 @@
+{
+  "task_id": "graph_missing",
+  "retrieval_mode": "semantic_plus_context_plus_refactor_prior",
+  "graph_available": false,
+  "items": [
+    {
+      "case_id": "case_train_case",
+      "source_project": "demo",
+      "smell_type": "LongMethod",
+      "score": 0.56312964034803,
+      "semantic_score": 0.9101821184158325,
+      "structure_score": 0.2,
+      "refactor_prior_score": 0.1,
+      "payload": {
+        "context_summary": {
+          "file_path": "src/DemoClass.java",
+          "graph_available": true
+        },
+        "refactor_action_sequence": [],
+        "bm25_score": 1.0,
+        "mode": "semantic_plus_context_plus_refactor_prior"
+      }
+    }
+  ],
+  "notes": [
+    "context_missing.graph=true; weights renormalized",
+    "retrieval_mode=semantic_plus_context_plus_refactor_prior"
+  ]
+}

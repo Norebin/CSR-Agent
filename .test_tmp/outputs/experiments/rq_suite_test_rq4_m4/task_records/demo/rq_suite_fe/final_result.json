@@ -1,0 +1,281 @@
+{
+  "task_id": "rq_suite_fe",
+  "project": "demo",
+  "smell_type": "FeatureEnvy",
+  "final_state": "accepted",
+  "accepted": true,
+  "loop_count": 1,
+  "evidence_pack": {
+    "task_id": "rq_suite_fe",
+    "retrieval_mode": "no_store",
+    "graph_available": true,
+    "items": [],
+    "notes": [
+      "semantic store missing; skip retrieval"
+    ]
+  },
+  "plan": {
+    "task_summary": "Refactor FeatureEnvy for demo:rq_suite_fe",
+    "smell_diagnosis": "Evidence count=0",
+    "risk_assessment": "normal",
+    "selected_agents": [
+      "move_refactorer",
+      "class_harmonizer",
+      "reviewer_verifier"
+    ],
+    "execution_order": [
+      "planner_orchestrator",
+      "move_refactorer",
+      "class_harmonizer",
+      "reviewer_verifier"
+    ],
+    "required_tools": [
+      "entity_tracker_tool",
+      "retrieval_tool",
+      "repo_browser_tool"
+    ],
+    "stop_conditions": [
+      "accepted_by_reviewer",
+      "max_review_loops_reached",
+      "unrecoverable_entity_resolution_failure"
+    ],
+    "acceptance_criteria": [
+      "compile_pass",
+      "target_smell_removed",
+      "no_high_risk_new_smells"
+    ],
+    "nodes": [
+      {
+        "node_id": "retrieve_evidence",
+        "kind": "service",
+        "description": "Collect retrieval evidence pack",
+        "required_tools": [
+          "retrieval_tool"
+        ],
+        "metadata": {}
+      },
+      {
+        "node_id": "refactor_main",
+        "kind": "agent",
+        "description": "Primary refactor path for FeatureEnvy",
+        "required_tools": [
+          "ast_tool",
+          "patch_tool"
+        ],
+        "metadata": {}
+      },
+      {
+        "node_id": "review_decision",
+        "kind": "agent",
+        "description": "Review and decide accept/retry/fail",
+        "required_tools": [
+          "repo_browser_tool"
+        ],
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "retrieve_evidence",
+        "target": "refactor_main",
+        "edge_type": "serial"
+      },
+      {
+        "source": "refactor_main",
+        "target": "review_decision",
+        "edge_type": "serial"
+      }
+    ]
+  },
+  "patch_bundle": {
+    "task_id": "rq_suite_fe",
+    "merged_diff": "--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// Feature Envy candidate method: compute\n+// Move strategy: delegate compute to DemoClassOwner\n--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// TODO: cleanup imports\n+// Harmonized naming/import cleanup after refactoring",
+    "proposals": [
+      {
+        "agent_name": "move_refactorer",
+        "proposed_refactor_actions": [
+          "Move Method",
+          "Delegate Call Sites",
+          "Access Adjustment"
+        ],
+        "unified_diff": "--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// Feature Envy candidate method: compute\n+// Move strategy: delegate compute to DemoClassOwner\n",
+        "rationale": "Method behavior relies more on external owner data than current class.",
+        "expected_smell_effect": "Reduce Feature Envy by ownership alignment.",
+        "possible_side_effects": [
+          "Call-site breakage if visibility contracts are not updated."
+        ],
+        "metadata": {
+          "target_owner_analysis": "DemoClassOwner"
+        }
+      },
+      {
+        "agent_name": "class_harmonizer",
+        "proposed_refactor_actions": [
+          "Cleanup Unused Imports",
+          "Normalize Local Naming",
+          "Adjust Visibility"
+        ],
+        "unified_diff": "--- a/src/DemoClass.java\n+++ b/src/DemoClass.java\n@@\n-// TODO: cleanup imports\n+// Harmonized naming/import cleanup after refactoring\n",
+        "rationale": "Low-risk structural cleanup only; no business logic rewrite.",
+        "expected_smell_effect": "Stabilize patch and reduce integration risks.",
+        "possible_side_effects": [],
+        "metadata": {
+          "cleanup_scope": "class-level"
+        }
+      }
+    ],
+    "conflicts": [
+      "Potential conflict on src/DemoClass.java"
+    ]
+  },
+  "review_feedback": {
+    "task_id": "rq_suite_fe",
+    "decision": "accept",
+    "failure_stage": "review",
+    "symptom": "All checks passed.",
+    "location": {
+      "file_path": "src/DemoClass.java",
+      "class_name": "DemoClass",
+      "method_name": "compute",
+      "line_span": null
+    },
+    "risk_level": "low",
+    "suggested_fix": "",
+    "should_retry": false,
+    "recommended_agent": "move_refactorer",
+    "forbidden_actions_next_round": [],
+    "tool_observations": [
+      {
+        "tool_name": "patch_tool",
+        "operation": "apply_patch",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing; logical apply only.",
+        "artifacts": {
+          "applied": false,
+          "check_pass": true
+        },
+        "timestamp": "2026-04-15T15:21:29.282818+00:00"
+      },
+      {
+        "tool_name": "ast_tool",
+        "operation": "parse_java",
+        "status": "ok",
+        "error_code": null,
+        "message": "Heuristic parse success.",
+        "artifacts": {
+          "parsed": true,
+          "engine": "heuristic"
+        },
+        "timestamp": "2026-04-15T15:21:29.282818+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_module",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:29.282818+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_project",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:29.283821+00:00"
+      }
+    ]
+  },
+  "validation": {
+    "task_id": "rq_suite_fe",
+    "parser_pass": true,
+    "module_compile_pass": true,
+    "project_compile_pass": true,
+    "targeted_tests_pass": null,
+    "generated_assertions_pass": null,
+    "target_smell_removed": true,
+    "newly_introduced_smells": [],
+    "observations": [
+      {
+        "tool_name": "patch_tool",
+        "operation": "apply_patch",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing; logical apply only.",
+        "artifacts": {
+          "applied": false,
+          "check_pass": true
+        },
+        "timestamp": "2026-04-15T15:21:29.282818+00:00"
+      },
+      {
+        "tool_name": "ast_tool",
+        "operation": "parse_java",
+        "status": "ok",
+        "error_code": null,
+        "message": "Heuristic parse success.",
+        "artifacts": {
+          "parsed": true,
+          "engine": "heuristic"
+        },
+        "timestamp": "2026-04-15T15:21:29.282818+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_module",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:29.282818+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_project",
+        "status": "degraded",
+        "error_code": null,
+        "message": "repo_path missing.",
+        "artifacts": {
+          "passed": true,
+          "executed": false
+        },
+        "timestamp": "2026-04-15T15:21:29.283821+00:00"
+      }
+    ]
+  },
+  "metrics": {
+    "task_id": "rq_suite_fe",
+    "smell_type": "FeatureEnvy",
+    "srr": 1.0,
+    "csr": 1.0,
+    "binary_sir": 0.0,
+    "count_sir": 0.0,
+    "assertion_pass_rate": null,
+    "token_cost": 0.0,
+    "time_cost": 0.06901039998047054,
+    "codebleu": 0.0,
+    "loop_count": 1,
+    "extra": {
+      "llm_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    }
+  },
+  "warnings": [
+    "Version resolution uncertainty is high."
+  ]
+}

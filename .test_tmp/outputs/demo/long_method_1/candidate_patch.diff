@@ -1,0 +1,10 @@
+--- a/src/DemoClass.java
++++ b/src/DemoClass.java
+@@
+-// TODO: compute original implementation
++// Refactored compute using low-risk intra-method transformations
+--- a/src/DemoClass.java
++++ b/src/DemoClass.java
+@@
+-// TODO: cleanup imports
++// Harmonized naming/import cleanup after refactoring

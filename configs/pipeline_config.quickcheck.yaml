@@ -1,0 +1,149 @@
+project:
+  data_root: D:/AsmellRefactor/MyCode/ACSmellData
+  repo_root: D:/AsmellRefactor/GitClone
+  graph_root: D:/AsmellRefactor/graph_data
+  output_root: D:/AsmellRefactor/CSR-Agent/outputs
+task_selection:
+  dataset_split: test
+  smell_types:
+  - LongMethod
+  - ComplexMethod
+  - LongParameterList
+  - FeatureEnvy
+  projects:
+  - jsoup
+  limit: 1
+models:
+  planner_backend: gpt-family
+  executor_backend: gpt-family
+  reviewer_backend: gpt-family
+  temperature: 0.2
+retrieval:
+  enabled: true
+  mode: semantic_plus_context_plus_refactor_prior
+  top_n_recall: 50
+  top_k_evidence: 5
+  weights:
+    semantic: 0.45
+    structure: 0.35
+    refactor_prior: 0.2
+  fallback_on_missing_graph: renormalize_remaining_weights
+memory:
+  semantic_memory: true
+  episode_memory: true
+  skill_memory: true
+agents:
+  planner_orchestrator: true
+  method_refactorer: true
+  move_refactorer: true
+  class_harmonizer: true
+  reviewer_verifier: true
+prompting:
+  strategy: few_shot
+  use_cot: true
+  use_react: false
+  use_tot: false
+tools:
+  git_tool: true
+  repo_browser_tool: true
+  ast_tool: true
+  entity_tracker_tool: true
+  patch_tool: true
+  build_tool: true
+  test_tool: true
+  smell_detector_tool: true
+  metrics_tool: true
+tool_runtime:
+  use_real_tools: true
+  default_timeout_sec: 900
+  git_bin: git
+  maven_bin: D:/Software/IntelliJ IDEA 2025.2.2/plugins/maven/lib/maven3/bin/mvn.cmd
+  maven_wrapper_cmd: mvnw.cmd
+  maven_wrapper_sh: mvnw
+  gradle_bin: gradle
+  gradle_wrapper: gradlew.bat
+  rg_bin: rg
+  java_home: D:/Software/coding/jdk-21.0.8
+  maven_settings_file: D:/AsmellRefactor/CSR-Agent/.m2/settings.xml
+  maven_local_repo: D:/AsmellRefactor/CSR-Agent/.m2/repository
+  pmd_command: D:/PMD/bin/pmd.bat check -d {repo_path} -R category/java/design.xml/CyclomaticComplexity,category/java/design.xml/ExcessiveMethodLength,category/java/design.xml/ExcessiveParameterList
+    -f text
+  designite_command: D:/Software/coding/jdk-21.0.8/bin/java.exe -jar D:/DesigniteJava/DesigniteJava.jar
+    -i {repo_path} -o D:/AsmellRefactor/CSR-Agent/outputs/designite
+validation:
+  compile: true
+  targeted_tests: false
+  generated_assertions: never
+  smell_redetect: true
+  max_review_loops: 3
+evaluation:
+  metrics:
+  - SRR
+  - CSR
+  - binary_SIR
+  - count_SIR
+  - assertion_pass_rate
+  - token_cost
+  - time_cost
+  - CodeBLEU
+  group_by:
+  - smell_type
+  - project
+  - method_name
+  save_task_artifacts: true
+ablation_profiles:
+  rq2_semantic_only:
+    retrieval.mode: semantic_only
+  rq2_context_only:
+    retrieval.mode: context_only
+  rq2_hybrid_default:
+    retrieval.mode: semantic_plus_context_plus_refactor_prior
+  rq2_bm25_like:
+    retrieval.mode: bm25_like
+  rq2_rrf_dense_bm25:
+    retrieval.mode: rrf_dense_bm25
+  rq2_no_rag:
+    retrieval.enabled: false
+    memory.semantic_memory: false
+  rq3_no_planner:
+    agents.planner_orchestrator: false
+  rq3_no_method_agent:
+    agents.method_refactorer: false
+  rq3_no_move_agent:
+    agents.move_refactorer: false
+  rq3_no_harmonizer:
+    agents.class_harmonizer: false
+  rq3_no_reviewer:
+    agents.reviewer_verifier: false
+  rq3_no_tools:
+    tools.git_tool: false
+    tools.repo_browser_tool: false
+    tools.ast_tool: false
+    tools.entity_tracker_tool: false
+    tools.patch_tool: false
+    tools.build_tool: false
+    tools.test_tool: false
+    tools.smell_detector_tool: false
+    tools.metrics_tool: false
+  rq3_no_skills:
+    memory.skill_memory: false
+  rq3_no_episode_memory:
+    memory.episode_memory: false
+  rq3_no_cot:
+    prompting.use_cot: false
+  rq3_react:
+    prompting.use_react: true
+  rq3_tot:
+    prompting.use_tot: true
+  rq3_few_shot:
+    prompting.strategy: few_shot
+    prompting.use_cot: true
+  rq3_one_shot:
+    prompting.strategy: one_shot
+    prompting.use_cot: false
+  rq4_loop_1:
+    validation.max_review_loops: 1
+  rq4_loop_2:
+    validation.max_review_loops: 2
+  rq4_loop_4:
+    validation.max_review_loops: 4

@@ -1,0 +1,7 @@
+{
+  "backend": "faiss",
+  "size": 1,
+  "ids": [
+    "case_train_case"
+  ]
+}

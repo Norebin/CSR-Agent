@@ -1,0 +1,336 @@
+{
+  "task_id": "smoke_jsoup_1",
+  "project": "jsoup",
+  "smell_type": "LongMethod",
+  "final_state": "failed",
+  "accepted": false,
+  "loop_count": 3,
+  "evidence_pack": {
+    "task_id": "smoke_jsoup_1",
+    "retrieval_mode": "no_store",
+    "graph_available": true,
+    "items": [],
+    "notes": [
+      "semantic store missing; skip retrieval"
+    ]
+  },
+  "plan": {
+    "task_summary": "Refactor LongMethod for jsoup:smoke_jsoup_1",
+    "smell_diagnosis": "Evidence count=0",
+    "risk_assessment": "normal",
+    "selected_agents": [
+      "method_refactorer",
+      "class_harmonizer",
+      "reviewer_verifier"
+    ],
+    "execution_order": [
+      "planner_orchestrator",
+      "method_refactorer",
+      "class_harmonizer",
+      "reviewer_verifier"
+    ],
+    "required_tools": [
+      "repo_browser_tool",
+      "retrieval_tool",
+      "entity_tracker_tool"
+    ],
+    "stop_conditions": [
+      "accepted_by_reviewer",
+      "max_review_loops_reached",
+      "unrecoverable_entity_resolution_failure"
+    ],
+    "acceptance_criteria": [
+      "compile_pass",
+      "target_smell_removed",
+      "no_high_risk_new_smells"
+    ],
+    "nodes": [
+      {
+        "node_id": "retrieve_evidence",
+        "kind": "service",
+        "description": "Collect retrieval evidence pack",
+        "required_tools": [
+          "retrieval_tool"
+        ],
+        "metadata": {}
+      },
+      {
+        "node_id": "refactor_main",
+        "kind": "agent",
+        "description": "Primary refactor path for LongMethod",
+        "required_tools": [
+          "ast_tool",
+          "patch_tool"
+        ],
+        "metadata": {}
+      },
+      {
+        "node_id": "review_decision",
+        "kind": "agent",
+        "description": "Review and decide accept/retry/fail",
+        "required_tools": [
+          "repo_browser_tool"
+        ],
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "retrieve_evidence",
+        "target": "refactor_main",
+        "edge_type": "serial"
+      },
+      {
+        "source": "refactor_main",
+        "target": "review_decision",
+        "edge_type": "serial"
+      }
+    ]
+  },
+  "patch_bundle": {
+    "task_id": "smoke_jsoup_1",
+    "merged_diff": "--- a/src/main/java/org/jsoup/Jsoup.java\n+++ b/src/main/java/org/jsoup/Jsoup.java\n@@\n-// TODO: parse original implementation\n+// Refactored parse using low-risk intra-method transformations\n--- a/src/main/java/org/jsoup/Jsoup.java\n+++ b/src/main/java/org/jsoup/Jsoup.java\n@@\n-// TODO: cleanup imports\n+// Harmonized naming/import cleanup after refactoring",
+    "proposals": [
+      {
+        "agent_name": "method_refactorer",
+        "proposed_refactor_actions": [
+          "Extract Method",
+          "Decompose Conditional",
+          "Guard Clause"
+        ],
+        "unified_diff": "--- a/src/main/java/org/jsoup/Jsoup.java\n+++ b/src/main/java/org/jsoup/Jsoup.java\n@@\n-// TODO: parse original implementation\n+// Refactored parse using low-risk intra-method transformations\n",
+        "rationale": "Prioritize behavior-preserving intra-method refactoring.",
+        "expected_smell_effect": "Reduce LongMethod intensity.",
+        "possible_side_effects": [
+          "Potential over-extraction if context is sparse."
+        ],
+        "metadata": {
+          "skill_cards_used": 0
+        }
+      },
+      {
+        "agent_name": "class_harmonizer",
+        "proposed_refactor_actions": [
+          "Cleanup Unused Imports",
+          "Normalize Local Naming",
+          "Adjust Visibility"
+        ],
+        "unified_diff": "--- a/src/main/java/org/jsoup/Jsoup.java\n+++ b/src/main/java/org/jsoup/Jsoup.java\n@@\n-// TODO: cleanup imports\n+// Harmonized naming/import cleanup after refactoring\n",
+        "rationale": "Low-risk structural cleanup only; no business logic rewrite.",
+        "expected_smell_effect": "Stabilize patch and reduce integration risks.",
+        "possible_side_effects": [],
+        "metadata": {
+          "cleanup_scope": "class-level"
+        }
+      }
+    ],
+    "conflicts": [
+      "Potential conflict on src/main/java/org/jsoup/Jsoup.java"
+    ]
+  },
+  "review_feedback": {
+    "task_id": "smoke_jsoup_1",
+    "decision": "fail",
+    "failure_stage": "static_validation",
+    "symptom": "project compile failed",
+    "location": {
+      "file_path": "src/main/java/org/jsoup/Jsoup.java",
+      "class_name": "Jsoup",
+      "method_name": "parse",
+      "line_span": null
+    },
+    "risk_level": "high",
+    "suggested_fix": "Retry with smaller patch scope and targeted fix.",
+    "should_retry": false,
+    "recommended_agent": "method_refactorer",
+    "forbidden_actions_next_round": [
+      "broad architectural rewrite",
+      "ignore tool failures"
+    ],
+    "tool_observations": [
+      {
+        "tool_name": "patch_tool",
+        "operation": "apply_patch",
+        "status": "error",
+        "error_code": "PATCH_CHECK_FAILED",
+        "message": "git apply --check failed.",
+        "artifacts": {
+          "applied": false,
+          "check_pass": false,
+          "stderr": "error: No valid patches in input (allow with \"--allow-empty\")\n",
+          "returncode": 128
+        },
+        "timestamp": "2026-04-15T05:25:28.414780+00:00"
+      },
+      {
+        "tool_name": "ast_tool",
+        "operation": "parse_java",
+        "status": "ok",
+        "error_code": null,
+        "message": "Heuristic parse success.",
+        "artifacts": {
+          "parsed": true,
+          "engine": "heuristic"
+        },
+        "timestamp": "2026-04-15T05:25:28.416697+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_module",
+        "status": "error",
+        "error_code": "EXCEPTION",
+        "message": "[WinError 2] 系统找不到指定的文件。",
+        "artifacts": {},
+        "timestamp": "2026-04-15T05:25:28.424695+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_project",
+        "status": "error",
+        "error_code": "EXCEPTION",
+        "message": "[WinError 2] 系统找不到指定的文件。",
+        "artifacts": {},
+        "timestamp": "2026-04-15T05:25:28.435035+00:00"
+      },
+      {
+        "tool_name": "test_tool",
+        "operation": "run_targeted_tests",
+        "status": "error",
+        "error_code": "EXCEPTION",
+        "message": "[WinError 2] 系统找不到指定的文件。",
+        "artifacts": {},
+        "timestamp": "2026-04-15T05:25:28.458934+00:00"
+      },
+      {
+        "tool_name": "smell_detector_tool",
+        "operation": "detect_target_smell",
+        "status": "degraded",
+        "error_code": null,
+        "message": "No detector configured; using fallback.",
+        "artifacts": {
+          "smell_removed": true,
+          "detector_used": []
+        },
+        "timestamp": "2026-04-15T05:25:28.459943+00:00"
+      },
+      {
+        "tool_name": "smell_detector_tool",
+        "operation": "detect_new_smells",
+        "status": "degraded",
+        "error_code": null,
+        "message": "No detector configured; using fallback.",
+        "artifacts": {
+          "new_smells": [],
+          "detector_used": []
+        },
+        "timestamp": "2026-04-15T05:25:28.459943+00:00"
+      }
+    ]
+  },
+  "validation": {
+    "task_id": "smoke_jsoup_1",
+    "parser_pass": true,
+    "module_compile_pass": false,
+    "project_compile_pass": false,
+    "targeted_tests_pass": true,
+    "generated_assertions_pass": null,
+    "target_smell_removed": true,
+    "newly_introduced_smells": [],
+    "observations": [
+      {
+        "tool_name": "patch_tool",
+        "operation": "apply_patch",
+        "status": "error",
+        "error_code": "PATCH_CHECK_FAILED",
+        "message": "git apply --check failed.",
+        "artifacts": {
+          "applied": false,
+          "check_pass": false,
+          "stderr": "error: No valid patches in input (allow with \"--allow-empty\")\n",
+          "returncode": 128
+        },
+        "timestamp": "2026-04-15T05:25:28.414780+00:00"
+      },
+      {
+        "tool_name": "ast_tool",
+        "operation": "parse_java",
+        "status": "ok",
+        "error_code": null,
+        "message": "Heuristic parse success.",
+        "artifacts": {
+          "parsed": true,
+          "engine": "heuristic"
+        },
+        "timestamp": "2026-04-15T05:25:28.416697+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_module",
+        "status": "error",
+        "error_code": "EXCEPTION",
+        "message": "[WinError 2] 系统找不到指定的文件。",
+        "artifacts": {},
+        "timestamp": "2026-04-15T05:25:28.424695+00:00"
+      },
+      {
+        "tool_name": "build_tool",
+        "operation": "compile_project",
+        "status": "error",
+        "error_code": "EXCEPTION",
+        "message": "[WinError 2] 系统找不到指定的文件。",
+        "artifacts": {},
+        "timestamp": "2026-04-15T05:25:28.435035+00:00"
+      },
+      {
+        "tool_name": "test_tool",
+        "operation": "run_targeted_tests",
+        "status": "error",
+        "error_code": "EXCEPTION",
+        "message": "[WinError 2] 系统找不到指定的文件。",
+        "artifacts": {},
+        "timestamp": "2026-04-15T05:25:28.458934+00:00"
+      },
+      {
+        "tool_name": "smell_detector_tool",
+        "operation": "detect_target_smell",
+        "status": "degraded",
+        "error_code": null,
+        "message": "No detector configured; using fallback.",
+        "artifacts": {
+          "smell_removed": true,
+          "detector_used": []
+        },
+        "timestamp": "2026-04-15T05:25:28.459943+00:00"
+      },
+      {
+        "tool_name": "smell_detector_tool",
+        "operation": "detect_new_smells",
+        "status": "degraded",
+        "error_code": null,
+        "message": "No detector configured; using fallback.",
+        "artifacts": {
+          "new_smells": [],
+          "detector_used": []
+        },
+        "timestamp": "2026-04-15T05:25:28.459943+00:00"
+      }
+    ]
+  },
+  "metrics": {
+    "task_id": "smoke_jsoup_1",
+    "smell_type": "LongMethod",
+    "srr": 1.0,
+    "csr": 0.0,
+    "binary_sir": 0.0,
+    "count_sir": 0.0,
+    "assertion_pass_rate": 1.0,
+    "token_cost": 0.0,
+    "time_cost": 0.5528952999738976,
+    "codebleu": 0.0,
+    "loop_count": 3,
+    "extra": {}
+  },
+  "warnings": [
+    "Version resolution uncertainty is high."
+  ]
+}

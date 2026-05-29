@@ -1,0 +1,9 @@
+{
+  "task_id": "post_validate_case",
+  "retrieval_mode": "no_store",
+  "graph_available": true,
+  "items": [],
+  "notes": [
+    "semantic store missing; skip retrieval"
+  ]
+}

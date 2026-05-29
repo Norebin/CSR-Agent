@@ -1,0 +1,32 @@
+{
+  "task_id": "force_retry",
+  "dataset_split": "test",
+  "project": "demo",
+  "version": {
+    "version_hint": "1.0.0",
+    "begin_tag": null,
+    "end_tag": null,
+    "disappear_tag": null,
+    "resolved_begin_tag": null,
+    "resolved_disappear_tag": null
+  },
+  "location": {
+    "package_name": "demo.pkg",
+    "type_name": "DemoClass",
+    "method_name": "compute",
+    "file_path": "src/DemoClass.java"
+  },
+  "file_path": "src/DemoClass.java",
+  "smell_type": "LongMethod",
+  "smell_metadata": {},
+  "context": {
+    "raw_code": "public class DemoClass { int compute(){ return 1; } }",
+    "comment": null,
+    "diff": null,
+    "commit_history": null,
+    "refactorings": null,
+    "graph_context_path": null,
+    "graph_available": true
+  },
+  "expected_outputs": []
+}

@@ -1,0 +1,20 @@
+{
+  "task_id": "jsoup_14",
+  "smell_type": "LongMethod",
+  "srr": 1.0,
+  "csr": 1.0,
+  "binary_sir": 0.0,
+  "count_sir": 0.0,
+  "assertion_pass_rate": null,
+  "token_cost": 53211.0,
+  "time_cost": 593.5317089000018,
+  "codebleu": 1.0,
+  "loop_count": 1,
+  "extra": {
+    "llm_usage": {
+      "prompt_tokens": 47860,
+      "completion_tokens": 5351,
+      "total_tokens": 53211
+    }
+  }
+}

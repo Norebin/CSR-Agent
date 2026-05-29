@@ -1,0 +1,5 @@
+--- a/src/DemoClass.java
++++ b/src/DemoClass.java
+@@
+-// TODO: cleanup imports
++// Harmonized naming/import cleanup after refactoring
